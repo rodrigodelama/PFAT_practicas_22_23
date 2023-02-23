@@ -15,8 +15,10 @@ import java_cup.runtime.Symbol;
       return new Symbol(5); }
 ")" { System.out.print("RPAREN ");
       return new Symbol(6); }
+"-" { System.out.print("MINUS ");
+      return new Symbol(7); }
 [0-9]+ { System.out.print("NUMBER ");
-         return new Symbol(7, new Integer(yytext())); }
+         return new Symbol(9, Integer.parseInt(yytext())); }
 [ \t\r\n\f] { /* ignore white space. */ }
 . { System.err.println("Illegal character: "+yytext()); }
 
