@@ -1,0 +1,25 @@
+package Lexer;
+
+import java_cup.runtime.Symbol;
+%%
+%public
+%cup
+%%
+";" { System.out.print("SEMI ");
+      return new Symbol(2); }
+"+" { System.out.print("PLUS ");
+      return new Symbol(3); }
+"*" { System.out.print("TIMES ");
+      return new Symbol(4); }
+"(" { System.out.print("LPAREN ");
+      return new Symbol(5); }
+")" { System.out.print("RPAREN ");
+      return new Symbol(6); }
+"-" { System.out.print("MINUS ");
+      return new Symbol(7); }
+[0-9]+ { System.out.print("NUMBER ");
+         return new Symbol(9, Integer.parseInt(yytext())); }
+[ \t\r\n\f] { /* ignore white space. */ }
+. { System.err.println("Illegal character: "+yytext()); }
+
+
