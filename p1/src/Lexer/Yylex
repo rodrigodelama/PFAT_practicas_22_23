@@ -1,0 +1,64 @@
+package Lexer;
+
+import Errors.LexerException;
+import Parser.sym;
+
+%%
+%{
+private java_cup.runtime.Symbol tok(int k, Object value) {
+//  System.out.println("Token: " + k);
+  return new java_cup.runtime.Symbol(k, yyline, 0, value); 
+}
+%}
+
+%public
+%cup
+%line
+%yylexthrow{
+LexerException
+%yylexthrow} 
+%eofval{
+{return tok(sym.EOF, null); }
+%eofval}
+
+letra= [a-zA-Z]
+
+
+%%
+";"		{return tok(sym.PC, null); }
+":="		{return tok(sym.ASOP, null); }
+"<"		{return tok(sym.MENORQUE, null); }
+">"		{return tok(sym.MAYORQUE, null); }
+"+"		{return tok(sym.MAS, null); }
+"/"		{return tok(sym.DIV, null); }
+"*"		{return tok(sym.POR, null); }
+"("		{return tok(sym.PAREN, null); }
+")"		{return tok(sym.TESIS, null); }
+"="		{return tok(sym.IGUALQUE, null); }
+","		{return tok(sym.COMA, null); }
+"-"		{return tok(sym.MENOS, null); }
+if    {return tok(sym.IF, null); }
+then    {return tok(sym.THEN, null); }
+else    {return tok(sym.ELSE, null); } 
+end    {return tok(sym.END, null); } 
+while    {return tok(sym.WHILE, null); } 
+plot    {return tok(sym.PLOT, null); } 
+do    {return tok(sym.DO, null); } 
+not    {return tok(sym.NOT, null); } 
+and		{return tok(sym.AND, null); }
+or    {return tok(sym.OR, null); } 
+size    {return tok(sym.SIZE, null); } 
+PF2023    {return tok(sym.PROG, null); } 
+Int2Real    {return tok(sym.INT2REAL, null); } 
+Real2Int    {return tok(sym.REAL2INT, null); } 
+vars    {return tok(sym.VARS, null); } 
+seno    {return tok(sym.SENO, null); } 
+coseno    {return tok(sym.COSENO, null); } 
+exp    {return tok(sym.EXPONENCIAL, null); } 
+//QUÉ PONGO DE SEGUNDO PARAMETRO????
+int		{return tok(sym.TIPO, new Boolean(Tipos.tint)); }
+bool		{return tok(sym.TIPO, new Boolean(Tipos.tbool)); }
+real    {return tok(sym.TIPO, 
+
+(" "|\n|\t|\r)+	{ }
+.		{throw new LexerException("Illegal character in line " + yyline);}
