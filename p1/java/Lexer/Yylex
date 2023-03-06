@@ -11,7 +11,7 @@ private java_cup.runtime.Symbol tok(int k, Object value) {
 }
 %}
 
-%public
+%public 
 %cup
 %line
 %yylexthrow{
@@ -22,7 +22,7 @@ LexerException
 %eofval}
 
 letra= [a-zA-Z]
-
+Digito = [0-9]
 
 %%
 ";"		{return tok(sym.PC, null); }
@@ -36,7 +36,7 @@ letra= [a-zA-Z]
 ")"		{return tok(sym.TESIS, null); }
 "="		{return tok(sym.IGUALQUE, null); }
 ","		{return tok(sym.COMA, null); }
-"-"		{return tok(sym.MENOS, null); }
+"-"		{return tok(sym.MENOS, null); } 
 if    {return tok(sym.IF, null); }
 then    {return tok(sym.THEN, null); }
 else    {return tok(sym.ELSE, null); } 
@@ -55,10 +55,32 @@ vars    {return tok(sym.VARS, null); }
 seno    {return tok(sym.SENO, null); } 
 coseno    {return tok(sym.COSENO, null); } 
 exp    {return tok(sym.EXPONENCIAL, null); } 
-//QUÉ PONGO DE SEGUNDO PARAMETRO????
-int		{return tok(sym.TIPO, new Boolean(Tipos.tint)); }
-bool		{return tok(sym.TIPO, new Boolean(Tipos.tbool)); }
-real    {return tok(sym.TIPO, 
+pi    {return tok(sym.PI, null); }
+
+//Tipos de variables
+int		{return tok(sym.TIPO, new Integer(Tipos.tint)); }        
+bool		{return tok(sym.TIPO, new Integer(Tipos.tbool)); }
+real    {return tok(sym.TIPO, new Integer(Tipos.treal)); } //Tipos.t_tipo, seran atributos de la clase public static int.
+
+//color    {return tok(sym.COLOR, new Integer(Tipos.tcolor);} -> no puede haber variables de tipo "color".
+//sino, como restringimos en las reglas de producción que haya un  
+
+//Constantes, que pongo de segundo parametro?
+[0-9]+		{return tok(sym.CENT, new Integer(yytext())); }
+true		{return tok(sym.CLOG, new Boolean(true)); }
+false		{return tok(sym.CLOG, new Boolean(false)); }
+white		{return tok(sym.COLOR, ; new Integer(0)); }
+grey    {return tok(sym.COLOR, ; new Integer(1)); }
+black   {return tok(sym.COLOR, ; new Integer(2)); }
+red   {return tok(sym.COLOR, ; new Integer(3)); }
+green   {return tok(sym.COLOR, ; new Integer(4)); }
+blue    {return tok(sym.COLOR, ; new Integer(5)); }
+yellow    {return tok(sym.COLOR, ; new Integer(6)); }
+orange    {return tok(sym.COLOR, ; new Integer(7)); }
+{Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-"|λ){Digito}+ | {Digito}+(e|E)("+"|"-"|λ){Digito}+ {return tok(sym.CREAL, yytext()); }	      
+
+//Identificadores
+{letra} ({letra}|[0-9])*	{return tok(sym.IDENT, yytext()); }
 
 (" "|\n|\t|\r)+	{ }
 .		{throw new LexerException("Illegal character in line " + yyline);}
