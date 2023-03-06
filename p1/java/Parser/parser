@@ -1,0 +1,20 @@
+package Parser;
+
+import java_cup.runtime.*;
+import AST.*;
+
+parser code {:
+public void syntax_error(Symbol s) {
+  report_error("Error de sintaxis en linea " + s.left, null);
+}
+
+public void unrecovered_syntax_error(Symbol s) throws
+  java.lang.Exception {
+  report_fatal_error("", null);
+}
+:};
+
+terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
+INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, TIPO, PC, ASOP, MENORQUE,
+MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, IDENT,
+CENT, CLOG, COLOR, CREAL
