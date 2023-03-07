@@ -44,8 +44,46 @@ precedence left MENOS;  //- (opuesto) MENOS SE REPITE, ES EL MISMO TOKEN -?
 
 start with Prog;
 
+//en :RESULT, algunas se hace new y otras no, por qué?
 Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new
   Progv(i1, in, v, s, e); :} ;
+
 Inp ::= PAREN LVar:lv TESIS {:RESULT=new
   Inp1(lv); :} 
-  | %empty
+  | {: RESULT = null; :} ;
+
+Vars ::= VARS VDef:vd {: RESULT = new
+  Vars1(vd); :}
+  | {: RESULT = null; :} ;
+
+Decl ::= TIPO:t LVar:l  {:RESULT=new
+  Decl(t.intValue(), l); :} ;
+
+LVar ::= IDENT:i  {:RESULT=new
+    LVar2(i); :}
+  | IDENT:i COMA LVar:l {:RESULT=new
+    LVar1(i,l); :} ;
+
+Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {: RESULT = new 
+  Size(exp1, exp2); :} ;
+
+Sent ::= SentSimp:ss PC Sent:s {: RESULT = new Sent(ss, s); :}
+  | SentSimp:ss PC {: RESULT = ss; :} ;
+
+SentSimp ::= Asign:as {: RESULT = as; :}
+  | Cond:c {: RESULT = c; :}
+  | Repet:r {: RESULT = r; :}
+  | Plot:p {: RESULT = p; :} ;
+
+Asign::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
+
+Cond::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} 
+  | IF Exp:e THEN Sent:s1 ELSE Sent:s2 END {:RESULT= new Condicional2(e,s1,s2); :} ;
+
+Repet -> WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
+
+Plot -> PLOT PAREN COLOR COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Dibujo(e1, e2); :} ;
+
+
+
+
