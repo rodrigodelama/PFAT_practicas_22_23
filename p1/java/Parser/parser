@@ -18,15 +18,34 @@ terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
 MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS
 
-terminal Integer TIPO, CENT, CREAL, COLOR; // TIPO:es para diferenciar entre distintas variables, Para int, real, color
+terminal Integer TIPO, CENT, CREAL, COLOR; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG; //Para bool
 terminal String IDENT;
-
+//no se si se puede agrupar más, la clase Sentencia estoy bastante seguro de que es asi
 non terminal Prog Prog;
-
+non terminal VDef VDef;
+non terminal Vars Vars;
 non terminal Decl Decl;
+non terminal Size Size;
 non terminal LVar LVar;
-non terminal Exp Exp;
+non terminal Inp Inp;
+non terminal Sentencia Sent, SentSimp, Asign, Cond, Repet;
+non terminal Plot Plot;
+non terminal Exp Exp; 
 
+precedence left OR;
+precedence left AND;
+precedence left NOT;
+precedence right IGUALQUE;
+precedence right MENORQUE, MAYORQUE;
+precedence left MAS, MENOS;
+precedence left POR, DIV;
+precedence left MENOS;  //- (opuesto) MENOS SE REPITE, ES EL MISMO TOKEN -?
 
 start with Prog;
+
+Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new
+  Progv(i1, in, v, s, e); :} ;
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new
+  Inp1(lv); :} 
+  | %empty
