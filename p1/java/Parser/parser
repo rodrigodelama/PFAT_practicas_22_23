@@ -49,52 +49,61 @@ Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Progv(i1, in, v,
 
 Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {: RESULT = null; :} ;
 
-Vars ::= VARS VDef:vd {: RESULT = new Vars1(vd); :} | {: RESULT = null; :} ;
+Vars ::= VARS VDef:vd {: RESULT=new Vars1(vd); :} | {: RESULT = null; :} ;
 
 Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ;
 
 LVar ::= IDENT:i  {:RESULT=new LVar2(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar1(i,l); :} ;
 
-Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {: RESULT = new Size(exp1, exp2); :} ;
+Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {: RESULT=new Size(exp1, exp2); :} ;
 
 Sent ::= SentSimp:ss PC Sent:s {: RESULT = new Sent(ss, s); :} | SentSimp:ss PC {: RESULT = ss; :} ;
 
 SentSimp ::= Asign:as {: RESULT = as; :} | Cond:c {: RESULT = c; :} | Repet:r {: RESULT = r; :} | Plot:p {: RESULT = p; :} ;
 
-Asign::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
+Asign ::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
 
-Cond::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp:e THEN Sent:s1 ELSE Sent:s2 END {:RESULT= new Condicional2(e,s1,s2); :} ;
+Cond ::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp:e THEN Sent:s1 ELSE Sent:s2 END {:RESULT= new Condicional2(e,s1,s2); :} ;
 
 Repet ::= WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
 
 Plot ::= PLOT PAREN COLOR COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Dibujo(e1, e2); :} ;
 
-Exp::= CLOG:c {:RESULT=new ConstanteBooleana(c.booleanValue()); :}
+
+
+      //Expresiones sin tipo definido
+Exp ::= IDENT:s {:RESULT=new Variable(s); :}
+      | PAREN Exp:e TESIS {:RESULT= e; :}
+      //Expresiones de tipo int
+      | CENT:n {:RESULT=new ConstanteEntera(n.intValue()); :}
+      | Exp:e1 MAS Exp:e2 {:RESULT=new Suma(e1,e2); :} 
+      | Exp:e1 MENOS Exp:e2 {:RESULT=new Menos(e1,e2); :} 
+      | Exp:e1 POR Exp:e2 {:RESULT=new Multiplicacion(e1,e2); :} 
+      | Exp:e1 DIV Exp:e2 {:RESULT=new Division(e1,e2); :} 
+      | MENOS Exp:e {:RESULT=new Opuesto(e); :} 
+      | Real2Int PAREN Exp:e1 TESIS {: RESULT=new RealToInt(e1); :}
+      //Expresiones de tipo real
+      | CREAL:n {:RESULT=new ConstanteReal(n.intValue()); :}
+      
+      | Int2Real PAREN Exp:e1 TESIS {: RESULT=new IntToReal(e1); :}
+      | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 
+      | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :} 
+      | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :} 
+      //Expresiones de tipo bool
+      | true {:RESULT=new Boolean(true):}
+      | false {:RESULT=new Boolean(false):}
+      | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :} 
+      | Exp:e1 OR Exp:e2 {:RESULT=new Or(e1, e2); :} 
+      | NOT Exp:e1 {:RESULT=new Not(e1); :} //NOT va delante pq es la negacion de la expresion
+      | Exp:e1 IGUALQUE Exp:e2 {:RESULT=new IgualQue(e1, e2); :} // RESULT = (e1 == e2)
+      | Exp:e1 MENORQUE Exp:e2 {:RESULT=new MenorQue(e1, e2); :} 
+      | Exp:e1 MAYORQUE Exp:e2 {:RESULT=new MayorQue(e1, e2); :} 
+
+
+      //.ejemplo CLASE
+Exp ::= CLOG:c {:RESULT=new ConstanteBooleana(c.booleanValue()); :}
       | IDENT:s {:RESULT=new Variable(s); :}
       | Exp:e1 MAS Exp:e2 {:RESULT=new Suma(e1,e2); :}    
       | CENT:n {:RESULT=new ConstanteEntera(n.intValue()); :}
       | PAREN Exp:e TESIS {:RESULT= e; :}
       | Exp:e1 IGUALQUE Exp:e2 {:RESULT=new IgualQue(e1, e2); :} ;
-
-
-//chatgpt
-Exp ::= ID                     {: RESULT = new IdentifierExp(val(1)); :}
-       | '(' Exp ')'           {: RESULT = val(2); :}
-       | INTEGER_CONST         {: RESULT = new IntConstExp(val(1)); :}
-       | Exp '+' Exp           {: RESULT = new PlusExp(val(1), val(3)); :}
-       | Exp '-' Exp           {: RESULT = new MinusExp(val(1), val(3)); :}
-       | Exp '*' Exp           {: RESULT = new TimesExp(val(1), val(3)); :}
-       | Exp '/' Exp           {: RESULT = new DivideExp(val(1), val(3)); :}
-       | '-' Exp %prec UMINUS  {: RESULT = new NegateExp(val(2)); :}
-       | Real2Int '(' Exp ')'  {: RESULT = new Real2IntExp(val(3)); :}
-       | Int2Real '(' Exp ')'  {: RESULT = new Int2RealExp(val(3)); :}
-       | Seno '(' Exp ')'      {: RESULT = new SenoExp(val(3)); :}
-       | Coseno '(' Exp ')'    {: RESULT = new CosenoExp(val(3)); :}
-       | Exp '>' Exp           {: RESULT = new GreaterThanExp(val(1), val(3)); :}
-       | Exp '<' Exp           {: RESULT = new LessThanExp(val(1), val(3)); :}
-       | '=' Exp               {: RESULT = new EqualExp(val(2)); :}
-       | true                  {: RESULT = new TrueExp(); :}
-       | false                 {: RESULT = new FalseExp(); :}
-       | Exp and Exp           {: RESULT = new AndExp(val(1), val(3)); :}
-       | Exp or Exp            {: RESULT = new OrExp(val(1), val(3)); :}
-       | not Exp               {: RESULT = new NotExp(val(2)); :} ;
