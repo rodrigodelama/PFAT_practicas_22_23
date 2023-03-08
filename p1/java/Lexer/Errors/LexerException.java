@@ -5,10 +5,10 @@ public class LexerException extends CompilerExc {
   private String msg;
 
   public LexerException(String s) {
-     msg = s;
-       }
+    msg = s;
+  }
 
   public String toString() {
-     return msg;
-       }
+    return msg;
+  }
 }

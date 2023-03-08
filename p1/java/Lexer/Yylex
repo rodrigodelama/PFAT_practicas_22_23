@@ -1,4 +1,4 @@
-package Lexer;
+package java.Lexer;
 
 import Errors.LexerException;
 import Parser.sym;
