@@ -1,6 +1,6 @@
 package AST;
 
-public class LVar2 {
+public class LVar2 implements LVar {
     public final String identifier;
     public final LVar lv;
 

@@ -53,7 +53,7 @@ Vars ::= VARS VDef:vd {: RESULT=new Vars1(vd); :} | {: RESULT = null; :} ;
 
 Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ;
 
-LVar ::= IDENT:i  {:RESULT=new LVar2(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar1(i,l); :} ;
+LVar ::= IDENT:i  {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar2(i,l); :} ;
 
 Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;
 

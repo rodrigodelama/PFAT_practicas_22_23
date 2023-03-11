@@ -1,5 +1,5 @@
 package AST;
-public class LVar1 {
+public class LVar1 implements LVar {
     public final String identifier;
 
     public LVar1(String identifier) {
