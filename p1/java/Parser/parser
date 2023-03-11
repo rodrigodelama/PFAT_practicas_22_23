@@ -96,9 +96,9 @@ Exp ::= IDENT:s {:RESULT=new Variable(s); :} //done
       | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} //Done 
       | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :} //Done
       | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :} //done
-      //Expresiones de tipo bool
+      //Expresiones de tipo bool //TODO:              AGRUPAMOS ???
       | true {:RESULT=new Boolean(true):} //how???
-      | false {:RESULT=new Boolean(false):}//how)))
+      | false {:RESULT=new Boolean(false):} //how ???
       | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :} 
       | Exp:e1 OR Exp:e2 {:RESULT=new Or(e1, e2); :} 
       | NOT Exp:e1 {:RESULT=new Not(e1); :} //

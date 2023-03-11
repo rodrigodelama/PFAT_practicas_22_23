@@ -1,5 +1,5 @@
-package AST;
+package java.AST;
 
 public interface LVar {
-    
+
 }

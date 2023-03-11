@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class LVar2 implements LVar {
     public final String identifier;

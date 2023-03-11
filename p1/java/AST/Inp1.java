@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Inp1 implements Inp{
     public final LVar lv;
@@ -6,8 +6,6 @@ public class Inp1 implements Inp{
     public Inp1(LVar lv) {
         this.lv = lv;
     }
-    // public Inp1() {
-        
-    // }
+    //what do we do for null regular expresion
 }
 

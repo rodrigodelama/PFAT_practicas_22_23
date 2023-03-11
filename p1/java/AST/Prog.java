@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Prog {
     public final String identifier;

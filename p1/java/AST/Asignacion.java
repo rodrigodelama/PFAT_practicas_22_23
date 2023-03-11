@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Asignacion implements Sentencias {
     public final String id;

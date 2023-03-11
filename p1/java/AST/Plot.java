@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Plot{
     public final Exp e1;

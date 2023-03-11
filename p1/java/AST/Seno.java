@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Seno implements Exp {
     public final Exp e1;

@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class IntToReal implements Exp{
     public final Exp e1;
@@ -6,5 +6,4 @@ public class IntToReal implements Exp{
     public IntToReal(Exp e1) {
         this.e1 = e1;
     }
-
 }

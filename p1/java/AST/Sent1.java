@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Sent1 implements Sent, Sentencias {
     public final SentSimp ss;

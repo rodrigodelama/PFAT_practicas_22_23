@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Variable implements Exp {
     public final String s;

@@ -1,4 +1,4 @@
-package AST;
+package java.AST;
 
 public class Condicional1 implements Sentencias, Sent {
     public final Exp e;
