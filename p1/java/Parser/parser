@@ -50,9 +50,9 @@ start with Prog;
 //en :RESULT, algunas se hace new y otras no, por qué?
 Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ; //está
 
-Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = null; :} ; //clase null??? //falta null
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = ... :} ; //clase null??? //falta null
 
-Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = null; :} ; //clase null??? //falta null
+Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = ... :} ; //clase null??? //falta null
 
 Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ; //está
 
