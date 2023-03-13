@@ -1,4 +1,5 @@
 package AST;
-public interface Inp{
+
+public interface Inp {
 
 }

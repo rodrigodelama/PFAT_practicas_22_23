@@ -16,7 +16,7 @@ public void unrecovered_syntax_error(Symbol s) throws
 
 terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
-MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS
+MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS
 
 terminal Integer TIPO, CENT, CREAL, COLOR; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG; //Para bool
@@ -40,7 +40,7 @@ precedence right IGUALQUE;
 precedence right MENORQUE, MAYORQUE;
 precedence left MAS, MENOS;
 precedence left POR, DIV;
-precedence left MENOS;  //- (opuesto) MENOS SE REPITE, ES EL MISMO TOKEN -?
+precedence left UMENOS;  
 
 //Simbolo Inicial
 start with Prog;
@@ -48,23 +48,24 @@ start with Prog;
 //Expresiones Regulares
 
 //en :RESULT, algunas se hace new y otras no, por qué?
-Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ; //está
+Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ;
 
-Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = ... :} ; //clase null??? //falta null
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = ... :} ;
 
-Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = ... :} ; //clase null??? //falta null
+Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = ... :} ;
 
-Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ; //está
+VDef ::= Decl:d PC {:RESULT=new VDef1(d); :} | Decl:d PC VDef:v {:RESULT=new VDef2(d,v); :} ;
 
-LVar ::= IDENT:i  {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar2(i, l); :} ; //ESTÁ
+Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ;
 
-Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;  //Está
+LVar ::= IDENT:i  {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar2(i, l); :} ;
 
-//AGRUPADO en interfaz de sentencias igual quitar y hacer intrfaz para cada uno
-//TODO: Preguntar
-Sent ::= SentSimp:ss PC Sent:s {:RESULT=new Sent1(ss, s); :} | SentSimp:ss PC {:RESULT = ss; :} ; //falta RESULT = ss
+Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;
 
-SentSimp ::= Asign:as {:RESULT = as; :} | Cond:c {:RESULT = c; :} | Repet:r {:RESULT = r; :} | Plot:p {:RESULT = p; :} ; //interfaz Sentencias.. y luego?
+//AGRUPADO en interfaz de sentencias 
+Sent ::= SentSimp:ss PC Sent:s {:RESULT=new Sent1(ss, s); :} | SentSimp:ss PC {:RESULT = ss; :} ; //TODO: //falta RESULT = ss
+
+SentSimp ::= Asign:as {:RESULT = as; :} | Cond:c {:RESULT = c; :} | Repet:r {:RESULT = r; :} | Plot:p {:RESULT = p; :} ; //TODO: //interfaz Sentencias.. y luego?
 
 Asign ::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
 
@@ -73,36 +74,34 @@ Cond ::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp
 Repet ::= WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
 
 
-Plot ::= PLOT PAREN COLOR COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(e1, e2); :} ; //está
+Plot ::= PLOT PAREN COLOR COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(e1, e2); :} ;
 
-//symbolos negativos igual que en el minimal.cup
-//la diferencia entre la resta
 
       //Expresiones sin tipo definido
-Exp ::= IDENT:s {:RESULT=new Variable(s); :} //done
-      | PAREN Exp:e TESIS {:RESULT= e; :} // ?
+Exp ::= IDENT:s {:RESULT=new Variable(s); :}
+      | PAREN Exp:e TESIS {:RESULT= new Parentesis(e); :}
+
       //Expresiones de tipo int
-      | CENT:n {:RESULT=new ConstanteEntera(n.intValue()); :} //done
-      | Exp:e1 MAS Exp:e2 {:RESULT=new Suma(e1, e2); :} // done 
-      | Exp:e1 MENOS Exp:e2 {:RESULT=new Menos(e1, e2); :} // done 
-      | Exp:e1 POR Exp:e2 {:RESULT=new Multiplicacion(e1, e2); :} // done 
-      | Exp:e1 DIV Exp:e2 {:RESULT=new Division(e1, e2); :} //done
-      | MENOS Exp:e {:RESULT=new Opuesto(e); :} // done
-      | Real2Int PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :} //done
+      | CENT:n {:RESULT=new ConstanteEntera(n.intValue()); :}
+      | Exp:e1 MAS Exp:e2 {:RESULT=new Suma(e1, e2); :}
+      | Exp:e1 MENOS Exp:e2 {:RESULT=new Menos(e1, e2); :}
+      | Exp:e1 POR Exp:e2 {:RESULT=new Multiplicacion(e1, e2); :} 
+      | Exp:e1 DIV Exp:e2 {:RESULT=new Division(e1, e2); :}
+      | MENOS Exp:e {:RESULT=new Opuesto(e); :} %prec UMENOS
+      | Real2Int PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :}
+
       //Expresiones de tipo real
-      | CREAL:n {:RESULT=new ConstanteReal(n.intValue()); :} //done
-
-      | Int2Real PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :} //done
-      | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} //Done 
-      | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :} //Done
-      | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :} //done
-      //Expresiones de tipo bool //TODO:              AGRUPAMOS ???
-      | true {:RESULT=new Boolean(true):} //how???
-      | false {:RESULT=new Boolean(false):} //how ???
-      | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :} 
-      | Exp:e1 OR Exp:e2 {:RESULT=new Or(e1, e2); :} 
-      | NOT Exp:e1 {:RESULT=new Not(e1); :} //
-      | Exp:e1 IGUALQUE Exp:e2 {:RESULT=new IgualQue(e1, e2); :} // RESULT = (e1 == e2)
-      | Exp:e1 MENORQUE Exp:e2 {:RESULT=new MenorQue(e1, e2); :} 
+      | CREAL:n {:RESULT=new ConstanteReal(n.intValue()); :}
+      | Int2Real PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
+      | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 
+      | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :}
+      | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :}
+      
+      //Expresiones de tipo bool
+      | CLOG:c {:RESULT=new ConstanteBooleana(c.booleanValue()); :}
+      | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :}  
+      | Exp:e1 OR Exp:e2 {:RESULT=new Or(e1, e2); :}
+      | NOT Exp:e1 {:RESULT=new Not(e1); :}
+      | Exp:e1 IGUALQUE Exp:e2 {:RESULT=new IgualQue(e1, e2); :}
+      | Exp:e1 MENORQUE Exp:e2 {:RESULT=new MenorQue(e1, e2); :}
       | Exp:e1 MAYORQUE Exp:e2 {:RESULT=new MayorQue(e1, e2); :} ;
-

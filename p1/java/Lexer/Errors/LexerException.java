@@ -1,11 +1,11 @@
-package java.Lexer.Errors;
-
+package Errors;
+//import Errors.CompilerExc;
 public class LexerException extends CompilerExc {
 
   private String msg;
 
   public LexerException(String s) {
-    msg = s;
+    this.msg = s;
   }
 
   public String toString() {

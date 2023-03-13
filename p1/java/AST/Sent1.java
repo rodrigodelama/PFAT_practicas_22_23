@@ -1,10 +1,10 @@
 package AST;
 
-public class Sent1 implements Sent, Sentencias {
+public class Sent1 implements Sentencias {
     public final SentSimp ss;
-    public final Sent s;
+    public final Sentencias s;
 
-    public Sent1(SentSimp ss, Sent s) {
+    public Sent1(SentSimp ss, Sentencias s) {
         this.ss = ss;
         this.s = s;
     }

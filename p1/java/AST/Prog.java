@@ -5,9 +5,9 @@ public class Prog {
     public final Inp input;
     public final Vars variables;
     public final Size size;
-    public final Sent sentence;
+    public final Sentencias sentence;
 
-    public Prog(String identifier, Inp input, Vars variables, Size size, Sent sentence) {
+    public Prog(String identifier, Inp input, Vars variables, Size size, Sentencias sentence) {
         this.identifier = identifier;
         this.input = input;
         this.variables = variables;
