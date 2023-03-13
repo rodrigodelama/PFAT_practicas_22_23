@@ -1,5 +1,4 @@
-package java.AST;
-
+package AST;
 public class Inp1 implements Inp{
     public final LVar lv;
 

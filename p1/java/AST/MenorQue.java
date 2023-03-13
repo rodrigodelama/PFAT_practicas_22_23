@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class MenorQue {
     public final Exp e1;

@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class Or {
     public final Exp e1;

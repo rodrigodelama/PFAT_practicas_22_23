@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class Menos implements Exp {
     public final Exp e1;

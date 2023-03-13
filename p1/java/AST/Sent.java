@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 //Creamos 
 public interface Sent {
 

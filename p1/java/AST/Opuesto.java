@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class Opuesto implements Exp {
     public final Exp e;

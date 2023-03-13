@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class Suma implements Exp {
     public final Exp e1;

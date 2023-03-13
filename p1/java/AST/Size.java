@@ -1,4 +1,4 @@
-package java.AST;
+package AST;
 
 public class Size {
     public final Exp exp1;

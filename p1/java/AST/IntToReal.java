@@ -1,5 +1,4 @@
-package java.AST;
-
+package AST;
 public class IntToReal implements Exp{
     public final Exp e1;
 

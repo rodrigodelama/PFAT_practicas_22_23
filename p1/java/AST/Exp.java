@@ -1,5 +1,4 @@
-package java.AST;
-
+package AST;
 public interface Exp {
 
 }

@@ -1,5 +1,4 @@
-package java.AST;
-
+package AST;
 public class And {
     public final Exp e1;
     public final Exp e2;

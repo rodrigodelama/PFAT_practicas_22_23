@@ -1,5 +1,4 @@
-package java.AST;
-
+package AST;
 public class ConstanteEntera implements Exp {
     public final int n;
 
