@@ -57,11 +57,16 @@ coseno    {return tok(sym.COSENO, null); }
 exp    {return tok(sym.EXPONENCIAL, null); } 
 pi    {return tok(sym.PI, null); }
 
+//Tipos de variables
 int		{return tok(sym.TIPO, new Integer(Tipos.tint)); }        
 bool		{return tok(sym.TIPO, new Integer(Tipos.tbool)); }
-real    {return tok(sym.TIPO, new Integer(Tipos.treal)); } 
+real    {return tok(sym.TIPO, new Integer(Tipos.treal)); } //Tipos.t_tipo, seran atributos de la clase public static int.
 
-[0-9]+		{return tok(sym.CENT, new Integer(yytext())); } 
+//color    {return tok(sym.COLOR, new Integer(Tipos.tcolor);} -> no puede haber variables de tipo "color".
+//sino, como restringimos en las reglas de producción que haya un  
+
+//Constantes, que pongo de segundo parametro?
+[0-9]+		{return tok(sym.CENT, new Integer(yytext())); } //que significa el interiot
 true		{return tok(sym.CLOG, new Boolean(true)); }
 false		{return tok(sym.CLOG, new Boolean(false)); }
 white		{return tok(sym.COLOR, new Integer(0)); }
@@ -72,13 +77,13 @@ green   {return tok(sym.COLOR, new Integer(4)); }
 blue    {return tok(sym.COLOR, new Integer(5)); }
 yellow    {return tok(sym.COLOR, new Integer(6)); }
 orange    {return tok(sym.COLOR, new Integer(7)); }
-
-
-{Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-")?{Digito}+ | {Digito}+(e|E)("+"|"-")?{Digito}+ {return tok(sym.CREAL, yytext()); }	      
-
 {Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-"|λ){Digito}+ | {Digito}+(e|E)("+"|"-"|λ){Digito}+ {return tok(sym.CREAL, yytext()); }	      
-
-{letra}({letra}|[0-9])*	{return tok(sym.IDENT, yytext()); }
+                                                                                  //cambiar lambda lambda=?
+//Sería así?
+{Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-"?){Digito}+ | {Digito}+(e|E)("+"|"-"?){Digito}+ {return tok(sym.CREAL, yytext()); }	      
+                                                                              
+//Identificadores
+{letra} ({letra}|[0-9])*	{return tok(sym.IDENT, yytext()); } //yytext grabs text, and puts it inside
 
 (" "|\n|\t|\r)+	{ }
 .		{throw new LexerException("Illegal character in line " + yyline);}

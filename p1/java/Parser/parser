@@ -16,7 +16,7 @@ public void unrecovered_syntax_error(Symbol s) throws
 
 terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
-MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS
+MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
 terminal Integer TIPO, CENT, CREAL, COLOR; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG; //Para bool
@@ -47,12 +47,11 @@ start with Prog;
 
 //Expresiones Regulares
 
-//en :RESULT, algunas se hace new y otras no, por qué?
 Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ;
 
-Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = ... :} ;
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = new Inp1(); :} ;
 
-Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = ... :} ;
+Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = new Vars1(); :} ;
 
 VDef ::= Decl:d PC {:RESULT=new VDef1(d); :} | Decl:d PC VDef:v {:RESULT=new VDef2(d,v); :} ;
 
@@ -88,11 +87,11 @@ Exp ::= IDENT:s {:RESULT=new Variable(s); :}
       | Exp:e1 POR Exp:e2 {:RESULT=new Multiplicacion(e1, e2); :} 
       | Exp:e1 DIV Exp:e2 {:RESULT=new Division(e1, e2); :}
       | MENOS Exp:e {:RESULT=new Opuesto(e); :} %prec UMENOS
-      | Real2Int PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :}
+      | REAL2INT PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :}
 
       //Expresiones de tipo real
       | CREAL:n {:RESULT=new ConstanteReal(n.intValue()); :}
-      | Int2Real PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
+      | INT2REAL PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
       | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 
       | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :}
       | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :}
