@@ -61,10 +61,9 @@ LVar ::= IDENT:i  {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new L
 
 Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;
 
-//AGRUPADO en interfaz de sentencias 
-Sent ::= SentSimp:ss PC Sent:s {:RESULT=new Sent1(ss, s); :} | SentSimp:ss PC {:RESULT = ss; :} ; //TODO: //falta RESULT = ss
-
-SentSimp ::= Asign:as {:RESULT = as; :} | Cond:c {:RESULT = c; :} | Repet:r {:RESULT = r; :} | Plot:p {:RESULT = p; :} ; //TODO: //interfaz Sentencias.. y luego?
+SentSimp ::= Asign:as {:RESULT =new SentSimp1 (as); :} | Cond:c {:RESULT =new SentSimp1 (c); :} | Repet:r {:RESULT =new SentSimp1 (r); :} | Plot:p {:RESULT = new SentSimp2 (p); :} ;
+//AGRUPADO en interfaz de Sentencia 
+Sent ::= SentSimp:ss PC Sent:s {:RESULT=new Sent1(ss, s); :} | SentSimp:ss PC {:RESULT = new Sent2(ss); :} ; 
 
 Asign ::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
 

@@ -74,9 +74,7 @@ yellow    {return tok(sym.COLOR, new Integer(6)); }
 orange    {return tok(sym.COLOR, new Integer(7)); }
 
 
-{Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-")?{Digito}+ | {Digito}+(e|E)("+"|"-")?{Digito}+ {return tok(sym.CREAL, yytext()); }	      
-
-{Digito}*"."{Digito}+ | {Digito}+"." | ({Digito}*"."{Digito}+ | {Digito}+".") (e|E)("+"|"-"|λ){Digito}+ | {Digito}+(e|E)("+"|"-"|λ){Digito}+ {return tok(sym.CREAL, yytext()); }	      
+{Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, yytext()); }	         
 
 {letra}({letra}|[0-9])*	{return tok(sym.IDENT, yytext()); }
 

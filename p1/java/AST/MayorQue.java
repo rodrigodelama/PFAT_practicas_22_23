@@ -1,6 +1,6 @@
 package AST;
 
-public class MayorQue {
+public class MayorQue implements Exp{
     public final Exp e1;
     public final Exp e2;
 

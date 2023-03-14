@@ -1,6 +1,6 @@
 package AST;
 
-public class MenorQue {
+public class MenorQue implements Exp{
     public final Exp e1;
     public final Exp e2;
 

@@ -1,5 +1,3 @@
 package AST;
 
-public class SentSimp {
-    
-}
+public interface SentSimp extends Sentencia{}

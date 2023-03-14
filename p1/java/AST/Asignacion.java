@@ -1,6 +1,6 @@
 package AST;
 
-public class Asignacion implements Sentencias {
+public class Asignacion implements Sentencia {
     public final String id;
     public final Exp e;
 

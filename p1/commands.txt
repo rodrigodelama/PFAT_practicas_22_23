@@ -1,0 +1,9 @@
+1.Carpetas errors, te metas en ../Errors
+    javac -d ../../class Errors/*.java
+2.AST, te metes en ../AST
+    javac -d ../class AST/*.java
+3.Generar parser y sym con CUP 
+java -jar ../../../class/CUP/java-cup-11b.jar parser
+4. Mover parser.java y sym.java a class
+5.Compilar parser.java y sym.java
+    javac *.java
