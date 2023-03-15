@@ -6,7 +6,7 @@ import Parser.sym;
 %%
 %{
 private java_cup.runtime.Symbol tok(int k, Object value) {
-    System.out.println("Token: " + k);  //para depurar, comentar antes de entregar
+    //System.out.println("Token: " + k);  //para depurar, comentar antes de entregar
   return new java_cup.runtime.Symbol(k, yyline, 0, value); 
 }
 %}
@@ -57,21 +57,21 @@ coseno    {return tok(sym.COSENO, null); }
 exp    {return tok(sym.EXPONENCIAL, null); } 
 pi    {return tok(sym.PI, null); }
 
-int		{return tok(sym.TIPO, new Integer(yytext())); }        
-bool		{return tok(sym.TIPO, new Integer(yytext())); }
-real    {return tok(sym.TIPO, new Integer(yytext())); } 
+int		{return tok(sym.TIPO, 200); }        
+bool		{return tok(sym.TIPO, 300); }
+real    {return tok(sym.TIPO, 400); } 
 
-[0-9]+		{return tok(sym.CENT, new Integer(yytext())); } 
-true		{return tok(sym.CLOG, new Boolean(true)); }
-false		{return tok(sym.CLOG, new Boolean(false)); }
-white		{return tok(sym.COLOR, new Integer(0)); }
-grey    {return tok(sym.COLOR, new Integer(1)); }
-black   {return tok(sym.COLOR, new Integer(2)); }
-red   {return tok(sym.COLOR, new Integer(3)); }
-green   {return tok(sym.COLOR, new Integer(4)); }
-blue    {return tok(sym.COLOR, new Integer(5)); }
-yellow    {return tok(sym.COLOR, new Integer(6)); }
-orange    {return tok(sym.COLOR, new Integer(7)); }
+[0-9]+		{return tok(sym.CENT, Integer.parseInt(yytext())); } 
+true		{return tok(sym.CLOG, true); }
+false		{return tok(sym.CLOG, false); }
+white		{return tok(sym.COLOR, 0); }
+grey    {return tok(sym.COLOR, 1); }
+black   {return tok(sym.COLOR, 2); }
+red   {return tok(sym.COLOR, 3); }
+green   {return tok(sym.COLOR, 4); }
+blue    {return tok(sym.COLOR, 5); }
+yellow    {return tok(sym.COLOR, 6); }
+orange    {return tok(sym.COLOR, 7); }
 
 
 {Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, yytext()); }	         
