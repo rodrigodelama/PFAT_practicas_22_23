@@ -16,7 +16,7 @@ public void unrecovered_syntax_error(Symbol s) throws
 
 terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
-MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
+MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS, PI;
 
 terminal Integer TIPO, CENT, CREAL, COLOR; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG; //Para bool

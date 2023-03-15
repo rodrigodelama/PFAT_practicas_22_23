@@ -4,7 +4,7 @@ cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
 javac -d ../class Errors/*.java
 
 2.AST, te metes en java ../AST
-    javac -d ../class AST/*.java
+javac -d ../class AST/*.java
 
 3.Generar parser y sym con CUP 
 
