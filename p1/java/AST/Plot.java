@@ -1,6 +1,6 @@
 package AST;
 
-public class Plot {
+public class Plot implements Sentencia {
     public final Exp e1;
     public final Exp e2;
 

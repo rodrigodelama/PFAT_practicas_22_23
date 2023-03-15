@@ -1,4 +1,4 @@
-package java.Lexer;
+package Lexer;
 
 import Errors.LexerException;
 import Parser.sym;
@@ -57,9 +57,9 @@ coseno    {return tok(sym.COSENO, null); }
 exp    {return tok(sym.EXPONENCIAL, null); } 
 pi    {return tok(sym.PI, null); }
 
-int		{return tok(sym.TIPO, new Integer(Tipos.tint)); }        
-bool		{return tok(sym.TIPO, new Integer(Tipos.tbool)); }
-real    {return tok(sym.TIPO, new Integer(Tipos.treal)); } 
+int		{return tok(sym.TIPO, new Integer(yytext())); }        
+bool		{return tok(sym.TIPO, new Integer(yytext())); }
+real    {return tok(sym.TIPO, new Integer(yytext())); } 
 
 [0-9]+		{return tok(sym.CENT, new Integer(yytext())); } 
 true		{return tok(sym.CLOG, new Boolean(true)); }

@@ -1,9 +1,33 @@
 1.Carpetas errors, te metas en ../Errors
-    javac -d ../../class Errors/*.java
-2.AST, te metes en ../AST
+
+cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
+javac -d ../class Errors/*.java
+
+2.AST, te metes en java ../AST
     javac -d ../class AST/*.java
+
 3.Generar parser y sym con CUP 
+
+cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
+
 4. Mover parser.java y sym.java a class
+
+mv *.java ../../class/
+
 5.Compilar parser.java y sym.java
-    javac *.java
+
+cd ../../class/
+javac -d . *.java
+
+6.Generar Yylex con JLex
+
+cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/Lexer
+java JLex.Main Yylex
+mv Yylex.java ../../class/Yylex.java
+cd ../../class/
+javac -d . Yylex.java
+
+7.Main
+cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
+javac -d . Main.java
