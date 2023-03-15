@@ -1,9 +1,9 @@
 package AST;
 
 public class ConstanteReal implements Exp {
-    public final int n;
+    public final float n;
 
-    public ConstanteReal(int n) {
+    public ConstanteReal(float n) {
         this.n = n;
     }
 }

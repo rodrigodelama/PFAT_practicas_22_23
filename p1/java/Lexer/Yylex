@@ -55,7 +55,6 @@ vars    {return tok(sym.VARS, null); }
 seno    {return tok(sym.SENO, null); } 
 coseno    {return tok(sym.COSENO, null); } 
 exp    {return tok(sym.EXPONENCIAL, null); } 
-pi    {return tok(sym.PI, null); }
 
 int		{return tok(sym.TIPO, 200); }        
 bool		{return tok(sym.TIPO, 300); }
@@ -65,13 +64,14 @@ real    {return tok(sym.TIPO, 400); }
 true		{return tok(sym.CLOG, true); }
 false		{return tok(sym.CLOG, false); }
 white		{return tok(sym.COLOR, 0); }
-grey    {return tok(sym.COLOR, 1); }
-black   {return tok(sym.COLOR, 2); }
-red   {return tok(sym.COLOR, 3); }
-green   {return tok(sym.COLOR, 4); }
-blue    {return tok(sym.COLOR, 5); }
+grey    {return tok(sym.COLOR, 2); }
+black   {return tok(sym.COLOR, 1); }
+red   {return tok(sym.COLOR, 4); }
+green   {return tok(sym.COLOR, 5); }
+blue    {return tok(sym.COLOR, 3); }
 yellow    {return tok(sym.COLOR, 6); }
 orange    {return tok(sym.COLOR, 7); }
+pi    {return tok(sym.PI, 20); }
 
 
 {Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, yytext()); }	         
