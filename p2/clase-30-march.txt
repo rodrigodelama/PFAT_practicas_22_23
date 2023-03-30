@@ -17,7 +17,7 @@ import java.io;
 
 public class static codeGenerator (String className, Prog ast) {
 	try {
-		BufferWriter w = new BufferWriter(new FileWriter(ClassName + ".java"));
+		BufferedWriter w = new BufferedWriter(new FileWriter(ClassName + ".java"));
 		w.write("import GeneratedCodeLib.*;");
 		w.newLine();
 		w.write("import java.util.*;");
@@ -44,10 +44,52 @@ public class ProgV2 implements Prog {
 	public final LDecl declIn;
 	public final LDecl declOut;
 	public final Statement st;
-	public voif generateCode(BufferedWritet w) throws IOException {
+	public voif generateCode(BufferedWriter w) throws IOException {
 								w.write("public static Vector<Variable>" + programName + "(" + declIn.generateArguments() + ") {");
 	w.newLine();
 	w.write( " Vector<Variable> _v = " + " new Vector<Variable>();");
 	w.newLine();
-	
+	st.generateCode(w, " ");
+	w.newLine();
+	declOut.generateResult(w);
+	w.newLine();
+	w.write(" return _v;");
+	w.newLine();
+	w.write("}");
+}
+
+
+public interface LDecl {
+	public String generateArguments();
+	public void generateLocalVariables(BufferedWriter w) throws IOException;
+	public void generateResult(BufferedWriter w) throws IOException;
+}
+
+
+caso -----------------------------------------------------------
+in int a,b;      | --> Ejem(int a, int b, boolean c)
+   bool c;       |				 ^            ^
+				 |			Decl(a y b)      Decl
+------------------------------------------------------------
+
+
+public class LDecl1 implements LDecl {
+	public final Decl d;
+	public final LDecl ld;
+	public String generateArguments() {
+		return d.generateArguments() + " , " + ld.generateArguments();
+	}
+
+	public void generateLocalVariables(BufferedWriter w) throws IOException {
+		w.write(" " + d.generateLocalVariables() + ";" );
+		w.newLine();
+		ld.generateLocalVariables(w);
+	}
+
+	public void generateResult(BufferedWriter w) throws IOException {
+		d.generateResult(w);
+		w.newLine();
+		ld.generateResult(w);
+	}
+
 }
