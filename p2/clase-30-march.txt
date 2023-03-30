@@ -1,0 +1,53 @@
+//lo de siempre
+
+prog Ejem
+in int a, b;
+out int x;
+{x := a+b; }
+
+public class Ejemplo {
+	public static int Ejem(int a, int b) {
+	
+	}
+}
+
+implementacion------------------------------------------------------------------
+
+import java.io;
+
+public class static codeGenerator (String className, Prog ast) {
+	try {
+		BufferWriter w = new BufferWriter(new FileWriter(ClassName + ".java"));
+		w.write("import GeneratedCodeLib.*;");
+		w.newLine();
+		w.write("import java.util.*;");
+		w.newLine();
+		w.write("public class " +  className + " {");
+		w.newLine(); w.newLine();
+		ast.generateCode(w);
+		w.newLine();
+		w.write("}"); w.newLine();
+		w.close();
+	} catch(IOException e) { //error message }
+}
+
+
+public interface Prog {
+	public void ComputeAH1() throws CompilerExc;
+	public void ComputeSt_Typ() throws CompilerExc;
+	public voif generateCode(BufferedWriter w) throws IOException;
+}
+
+
+public class ProgV2 implements Prog {
+	public final String programName;
+	public final LDecl declIn;
+	public final LDecl declOut;
+	public final Statement st;
+	public voif generateCode(BufferedWritet w) throws IOException {
+								w.write("public static Vector<Variable>" + programName + "(" + declIn.generateArguments() + ") {");
+	w.newLine();
+	w.write( " Vector<Variable> _v = " + " new Vector<Variable>();");
+	w.newLine();
+	
+}
