@@ -1,3 +1,5 @@
+//Start from the root directory of rodrigodelama/PFAT_practicas_22_23
+
 cd p1/java
 javac -d ../class Errors/*.java
 javac -d ../class AST/*.java
