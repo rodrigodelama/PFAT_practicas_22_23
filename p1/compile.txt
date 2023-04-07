@@ -13,9 +13,9 @@ java JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
-javac -d . Main.java
 mv ../java/Main.java ../class/Main.java
 rm parser.java
 rm sym.java
 rm Yylex.java
 javac -d . Main.java
+rm Main.java
