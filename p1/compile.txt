@@ -19,3 +19,6 @@ rm sym.java
 rm Yylex.java
 javac -d . Main.java
 rm Main.java
+
+//to redo the compile (if you didnt cd out of the class directory)
+cd ../../
