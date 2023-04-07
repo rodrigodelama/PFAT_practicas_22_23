@@ -1,22 +1,19 @@
 cd p1/java
 javac -d ../class Errors/*.java
 javac -d ../class AST/*.java
-cd .\Parser\
+cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/
 cd ../../class/
 javac -d . *.java
-..\java\Lexer\
-cd ..\java\Lexer\
+cd ../java/Lexer/
 java JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
 javac -d . Main.java
-
-//testing
-java Main ..\ejemplos\Ejem1\Rectangulo.prg
-java Main ..\ejemplos\Ejem2\Rectangulo.prg
-java Main ..\ejemplos\Ejem2\Diagonal1.prg
-java Main ..\ejemplos\Ejem2\Circulo.prg
-java Main ..\ejemplos\Ejem5\Circulo.prg
+mv ../java/Main.java ../class/Main.java
+rm parser.java
+rm sym.java
+rm Yylex.java
+javac -d . Main.java
