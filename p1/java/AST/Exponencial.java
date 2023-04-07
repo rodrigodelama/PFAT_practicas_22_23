@@ -6,5 +6,4 @@ public class Exponencial implements Exp {
     public Exponencial(Exp e1) {
         this.e1 = e1;
     }
-
 }

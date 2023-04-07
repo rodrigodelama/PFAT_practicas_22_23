@@ -1,6 +1,6 @@
 package AST;
 
-public class Or implements Exp{
+public class Or implements Exp {
     public final Exp e1;
     public final Exp e2;
 

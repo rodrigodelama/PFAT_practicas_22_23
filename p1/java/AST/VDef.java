@@ -1,4 +1,4 @@
 package AST;
-public interface VDef{
+public interface VDef {
 
 }

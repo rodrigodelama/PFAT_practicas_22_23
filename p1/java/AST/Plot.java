@@ -5,7 +5,7 @@ public class Plot implements Sentencia {
     public final Exp e2;
 
     public Plot(Exp e1, Exp e2) {
-        this.e1=e1;
-        this.e2=e2;
+        this.e1 = e1;
+        this.e2 = e2;
     }
 }
