@@ -1,0 +1,22 @@
+cd p1/java
+javac -d ../class Errors/*.java
+javac -d ../class AST/*.java
+cd .\Parser\
+java -jar ../../../class/CUP/java-cup-11b.jar parser
+mv *.java ../../class/
+cd ../../class/
+javac -d . *.java
+..\java\Lexer\
+cd ..\java\Lexer\
+java JLex.Main Yylex
+mv Yylex.java ../../class/Yylex.java
+cd ../../class/
+javac -d . Yylex.java
+javac -d . Main.java
+
+//testing
+java Main ..\ejemplos\Ejem1\Rectangulo.prg
+java Main ..\ejemplos\Ejem2\Rectangulo.prg
+java Main ..\ejemplos\Ejem2\Diagonal1.prg
+java Main ..\ejemplos\Ejem2\Circulo.prg
+java Main ..\ejemplos\Ejem5\Circulo.prg
