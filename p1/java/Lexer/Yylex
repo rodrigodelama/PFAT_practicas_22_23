@@ -71,10 +71,10 @@ green   {return tok(sym.COLOR, 5); }
 blue    {return tok(sym.COLOR, 3); }
 yellow    {return tok(sym.COLOR, 6); }
 orange    {return tok(sym.COLOR, 7); }
-pi    {return tok(sym.PI, 20); }
+pi    {return tok(sym.PI, 3.14159f); }
 
 
-{Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, yytext()); }	         
+{Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, Float.parseFloat(yytext())); }	         
 
 {letra}({letra}|[0-9])*	{return tok(sym.IDENT, yytext()); }
 

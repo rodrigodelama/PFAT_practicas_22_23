@@ -1,6 +1,6 @@
 1.Carpetas errors, te metas en ../Errors
 
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
 javac -d ../class Errors/*.java
 
 2.AST, te metes en java ../AST
@@ -22,18 +22,18 @@ javac -d . *.java
 
 6.Generar Yylex con JLex
 
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/Lexer
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/Lexer
 java JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
 
 7.Main
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
 javac -d . Main.java
 
 
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
 javac -d ../class Errors/*.java
 javac -d ../class AST/*.java
 cd Parser
@@ -41,12 +41,12 @@ java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/
 cd ../../class/
 javac -d . *.java
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/Lexer
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/Lexer
 java JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
-cd /home/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
+cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
 
 rm parser.java sym.java Yylex.java
 mv ../java/Main.java .

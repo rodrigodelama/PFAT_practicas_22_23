@@ -18,9 +18,13 @@ terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
 MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
-terminal Integer TIPO, CENT, CREAL, COLOR, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
+//NO LO USAMOS? CHECK
+//WHITE, GREY, BLACK, RED, GREEN, BLUE, YELLOW, ORANGE;
+
+terminal Integer TIPO, CENT;
+terminal Float CREAL, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG; //Para bool
-terminal String IDENT;
+terminal String IDENT, COLOR;
 //no se si se puede agrupar más, la clase Sentencia estoy bastante seguro de que es asi
 non terminal Prog Prog;
 non terminal VDef VDef;
@@ -89,15 +93,13 @@ Exp ::= IDENT:s {:RESULT=new Variable(s); :}
       | REAL2INT PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :}
 
       //Expresiones de tipo real
-      | PI:p {:RESULT=new ConstantePi(p.floatValue()); :}
+      | PI:p {:RESULT=new ConstanteReal(3.14159f); :}
       | CREAL:n {:RESULT=new ConstanteReal(n.floatValue()); :}
       | INT2REAL PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
       | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 
       | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :}
       | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :}
 
-      //tipo color
-      |COLOR:c {:RESULT=new Color(c.intValue()); :}
       //Expresiones de tipo bool
       | CLOG:c {:RESULT=new ConstanteBooleana(c.booleanValue()); :}
       | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :}  
