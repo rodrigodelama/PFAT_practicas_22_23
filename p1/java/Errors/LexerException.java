@@ -5,7 +5,7 @@ public class LexerException extends CompilerExc {
   private String msg;
 
   public LexerException(String s) {
-    this.msg = s;
+    super(s);
   }
 
   public String toString() {

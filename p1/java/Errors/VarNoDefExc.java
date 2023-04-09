@@ -1,6 +1,6 @@
-package Compiler;
+package Errors;
 
-public class VarNoDefExc extends Exception{
+public class VarNoDefExc extends CompilerExc{ //por la cabecera del metodo Exp
     
     public VarNoDefExc (String name){
         super(name);

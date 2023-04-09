@@ -8,4 +8,7 @@ public class Size {
         this.exp1 = exp1;
         this.exp2 = exp2;
     }
+
+    //<Size>.st_typ= if (<Exp>.typ== int) 
+    //and (<Exp>1.typ== int) then void else typ_err
 }

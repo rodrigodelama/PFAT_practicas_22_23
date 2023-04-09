@@ -4,6 +4,9 @@ import java.util.Vector;
 
 import javax.swing.text.TableView;
 
+import Errors.DoubleDefExc;
+import Errors.VarNoDefExc;
+
 public class SymbolTable {
     private static Vector<TableEntry> table =new Vector<TableEntry>();
 

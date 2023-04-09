@@ -1,6 +1,6 @@
-package Compiler;
+package Errors;
 
-public class DoubleDefExc extends Exception{
+public class DoubleDefExc extends CompilerExc{
     
     public DoubleDefExc (String name){
         super(name);
