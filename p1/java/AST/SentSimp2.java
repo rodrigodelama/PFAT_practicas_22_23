@@ -6,4 +6,9 @@ public class SentSimp2 implements Sentencia {
     public SentSimp2(Plot p) {
         this.p = p;
     }
+
+    public int computeTyp() throws CompilerExc{
+
+        return p.computeTyp();
+    }
 }

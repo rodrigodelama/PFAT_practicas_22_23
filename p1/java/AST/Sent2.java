@@ -6,4 +6,8 @@ public class Sent2 implements Sentencia {
     public Sent2(Sentencia ss) {
         this.ss = ss;
     }
+    
+    public int computeTyp() throws CompilerExc{
+       return ss.computeTyp();
+    }
 }

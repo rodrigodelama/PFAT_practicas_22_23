@@ -1,5 +1,7 @@
 package AST;
 
-public interface Sentencia {
+import Errors.CompilerExc;
 
+public interface Sentencia {
+    public int computeTyp() throws CompilerExc;
 }

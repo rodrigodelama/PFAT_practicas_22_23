@@ -6,4 +6,9 @@ public class SentSimp1 implements Sentencia {
     public SentSimp1(Sentencia as) {
         this.as = as;
     }
+
+    public int computeTyp() throws CompilerExc{
+
+        return as.computeTyp();
+    }
 }

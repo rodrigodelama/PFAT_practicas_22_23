@@ -2,8 +2,6 @@ package Compiler;
 
 import java.util.Vector;
 
-import javax.swing.text.TableView;
-
 import Errors.DoubleDefExc;
 import Errors.VarNoDefExc;
 
