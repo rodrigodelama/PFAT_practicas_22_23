@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.CompilerExc;
+
 public class Vars1 implements Vars {
     public final VDef vd;
 
@@ -10,4 +12,9 @@ public class Vars1 implements Vars {
     public Vars1() {
         this.vd = null;
     } 
+
+    public void computeAH1() throws CompilerExc{
+        vd.computeAH1();
+    }
+
 }

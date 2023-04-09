@@ -1,5 +1,7 @@
 package AST;
 
-public interface Exp {
+import Errors.CompilerExc;
 
+public interface Exp {
+    public int computeTyp() throws CompilerExc;
 }
