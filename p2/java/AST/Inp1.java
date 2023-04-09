@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.CompilerExc;
+
 public class Inp1 implements Inp {
     public final LVar lv;
 
@@ -10,4 +12,10 @@ public class Inp1 implements Inp {
     public Inp1() {
         this.lv = null;
     }
+
+    public void computeAH1() throws CompilerExc{
+        //200 is for int: see yylex
+        lv.computeAH1(200);
+    }
+
 }

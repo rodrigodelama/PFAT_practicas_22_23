@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.CompilerExc;
+
 public class Prog {
     public final String identifier;
     public final Inp input;
@@ -13,5 +15,12 @@ public class Prog {
         this.variables = variables;
         this.size = size;
         this.sentence = sentence;
+    }
+
+    public void computeAH1() throws CompilerExc{
+        input.computeAH1();
+        variables.computeAH1();
+        size.computeAH1();
+        sentence.computeAH1();
     }
 }

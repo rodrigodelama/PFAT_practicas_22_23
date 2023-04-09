@@ -1,0 +1,24 @@
+//Start from the root directory of rodrigodelama/PFAT_practicas_22_23
+
+cd p1/java
+javac -d ../class Errors/*.java
+javac -d ../class AST/*.java
+cd Parser
+java -jar ../../../class/CUP/java-cup-11b.jar parser
+cp *.java ../../class/
+cd ../../class/
+javac -d . *.java
+cd ../java/Lexer/
+java JLex.Main Yylex
+cp Yylex.java ../../class/Yylex.java
+cd ../../class/
+javac -d . Yylex.java
+cp ../java/Main.java ../class/Main.java
+rm parser.java
+rm sym.java
+rm Yylex.java
+javac -d . Main.java
+rm Main.java
+
+//to redo the compile (if you didnt cd out of the class directory)
+cd ../../

@@ -1,0 +1,110 @@
+package Parser;
+
+import java_cup.runtime.*;
+import AST.*;
+
+parser code {:
+public void syntax_error(Symbol s) {
+  report_error("Error de sintaxis en linea " + s.left, null);
+}
+
+public void unrecovered_syntax_error(Symbol s) throws
+  java.lang.Exception {
+  report_fatal_error("", null);
+}
+:};
+
+terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
+INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
+MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
+
+//NO LO USAMOS? CHECK
+//WHITE, GREY, BLACK, RED, GREEN, BLUE, YELLOW, ORANGE;
+
+terminal Integer TIPO, CENT;
+terminal Float CREAL, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
+terminal Boolean CLOG; //Para bool
+terminal String IDENT, COLOR;
+//no se si se puede agrupar más, la clase Sentencia estoy bastante seguro de que es asi
+non terminal Prog Prog;
+non terminal VDef VDef;
+non terminal Vars Vars;
+non terminal Decl Decl;
+non terminal Size Size;
+non terminal LVar LVar;
+non terminal Inp Inp;
+non terminal Sentencia Sent, SentSimp, Asign, Cond, Repet;
+non terminal Plot Plot;
+non terminal Exp Exp; 
+
+precedence left OR;
+precedence left AND;
+precedence left NOT;
+precedence right IGUALQUE;
+precedence right MENORQUE, MAYORQUE;
+precedence left MAS, MENOS;
+precedence left POR, DIV;
+precedence left UMENOS;  
+
+//Simbolo Inicial
+start with Prog;
+
+//Expresiones Regulares
+
+Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ;
+
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = new Inp1(); :} ;
+
+Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = new Vars1(); :} ;
+
+VDef ::= Decl:d PC {:RESULT=new VDef1(d); :} | Decl:d PC VDef:v {:RESULT=new VDef2(d,v); :} ;
+
+Decl ::= TIPO:t LVar:l  {:RESULT=new Decl(t.intValue(), l); :} ;
+
+LVar ::= IDENT:i  {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar2(i, l); :} ;
+
+Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;
+
+SentSimp ::= Asign:as {:RESULT =new SentSimp1 (as); :} | Cond:c {:RESULT =new SentSimp1 (c); :} | Repet:r {:RESULT =new SentSimp1 (r); :} | Plot:p {:RESULT = new SentSimp2 (p); :} ;
+//AGRUPADO en interfaz de Sentencia 
+Sent ::= SentSimp:ss PC Sent:s {:RESULT=new Sent1(ss, s); :} | SentSimp:ss PC {:RESULT = new Sent2(ss); :} ; 
+
+Asign ::= IDENT:id ASOP Exp:e  {:RESULT=new Asignacion(id, e); :} ;
+
+Cond ::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp:e THEN Sent:s1 ELSE Sent:s2 END {:RESULT=new Condicional2(e, s1, s2); :} ;
+
+Repet ::= WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
+
+
+Plot ::= PLOT PAREN COLOR COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(e1, e2); :} ;
+
+
+      //Expresiones sin tipo definido
+Exp ::= IDENT:s {:RESULT=new Variable(s); :}
+      | PAREN Exp:e TESIS {:RESULT= new Parentesis(e); :}
+
+      //Expresiones de tipo int
+      | CENT:n {:RESULT=new ConstanteEntera(n.intValue()); :}
+      | Exp:e1 MAS Exp:e2 {:RESULT=new Suma(e1, e2); :}
+      | Exp:e1 MENOS Exp:e2 {:RESULT=new Menos(e1, e2); :}
+      | Exp:e1 POR Exp:e2 {:RESULT=new Multiplicacion(e1, e2); :} 
+      | Exp:e1 DIV Exp:e2 {:RESULT=new Division(e1, e2); :}
+      | MENOS Exp:e {:RESULT=new Opuesto(e); :} %prec UMENOS
+      | REAL2INT PAREN Exp:e1 TESIS {:RESULT=new RealToInt(e1); :}
+
+      //Expresiones de tipo real
+      | PI:p {:RESULT=new ConstanteReal(3.14159f); :}
+      | CREAL:n {:RESULT=new ConstanteReal(n.floatValue()); :}
+      | INT2REAL PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
+      | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 
+      | COSENO PAREN Exp:e1 TESIS {:RESULT=new Coseno(e1); :}
+      | EXPONENCIAL PAREN Exp:e1 TESIS {:RESULT=new Exponencial(e1); :}
+
+      //Expresiones de tipo bool
+      | CLOG:c {:RESULT=new ConstanteBooleana(c.booleanValue()); :}
+      | Exp:e1 AND Exp:e2 {:RESULT=new And(e1, e2); :}  
+      | Exp:e1 OR Exp:e2 {:RESULT=new Or(e1, e2); :}
+      | NOT Exp:e1 {:RESULT=new Not(e1); :}
+      | Exp:e1 IGUALQUE Exp:e2 {:RESULT=new IgualQue(e1, e2); :}
+      | Exp:e1 MENORQUE Exp:e2 {:RESULT=new MenorQue(e1, e2); :}
+      | Exp:e1 MAYORQUE Exp:e2 {:RESULT=new MayorQue(e1, e2); :} ;

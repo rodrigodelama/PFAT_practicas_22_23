@@ -1,33 +1,33 @@
 //Ejem
-java Main ..\ejemplos\Ejem1\Rectangulo.prg
-java Main ..\ejemplos\Ejem2\Diagonal1.prg
-java Main ..\ejemplos\Ejem3\Diagonal2.prg
-java Main ..\ejemplos\Ejem4\Diagonal1.prg
-java Main ..\ejemplos\Ejem5\Circulo.prg
-java Main ..\ejemplos\Ejem6\Circulo.prg
-java Main ..\ejemplos\Ejem7\Triangulo2.prg
-java Main ..\ejemplos\Ejem8\Triangulo3.prg
-java Main ..\ejemplos\Ejem9\Mixto.prg
-java Main ..\ejemplos\Ejem10\Seno.prg
-java Main ..\ejemplos\Ejem11\Zigzag.prg
-java Main ..\ejemplos\Ejem12\Exponencial.prg
+java Main ..\..\ejemplos\Ejem1\Rectangulo.prg
+java Main ..\..\ejemplos\Ejem2\Diagonal1.prg
+java Main ..\..\ejemplos\Ejem3\Diagonal2.prg
+java Main ..\..\ejemplos\Ejem4\Diagonal1.prg
+java Main ..\..\ejemplos\Ejem5\Circulo.prg
+java Main ..\..\ejemplos\Ejem6\Circulo.prg
+java Main ..\..\ejemplos\Ejem7\Triangulo2.prg
+java Main ..\..\ejemplos\Ejem8\Triangulo3.prg
+java Main ..\..\ejemplos\Ejem9\Mixto.prg
+java Main ..\..\ejemplos\Ejem10\Seno.prg
+java Main ..\..\ejemplos\Ejem11\Zigzag.prg
+java Main ..\..\ejemplos\Ejem12\Exponencial.prg
 
 //ErrLex
-java Main ..\ejemplos\ErrLex\ErrLex.prg
+java Main ..\..\ejemplos\ErrLex\ErrLex.prg
 
 //ErrSem
-java Main ..\ejemplos\ErrSem1\ErrSem1.prg
-java Main ..\ejemplos\ErrSem2\ErrSem2.prg
-java Main ..\ejemplos\ErrSem3\ErrSem3.prg
-java Main ..\ejemplos\ErrSem4\ErrSem4.prg
-java Main ..\ejemplos\ErrSem5\ErrSem5.prg
-java Main ..\ejemplos\ErrSem6\ErrSem6.prg
-java Main ..\ejemplos\ErrSem7\ErrSem7.prg
-java Main ..\ejemplos\ErrSem8\ErrSem8.prg
-java Main ..\ejemplos\ErrSem9\ErrSem9.prg
-java Main ..\ejemplos\ErrSem10\ErrSem10.prg
+java Main ..\..\ejemplos\ErrSem1\ErrSem1.prg
+java Main ..\..\ejemplos\ErrSem2\ErrSem2.prg
+java Main ..\..\ejemplos\ErrSem3\ErrSem3.prg
+java Main ..\..\ejemplos\ErrSem4\ErrSem4.prg
+java Main ..\..\ejemplos\ErrSem5\ErrSem5.prg
+java Main ..\..\ejemplos\ErrSem6\ErrSem6.prg
+java Main ..\..\ejemplos\ErrSem7\ErrSem7.prg
+java Main ..\..\ejemplos\ErrSem8\ErrSem8.prg
+java Main ..\..\ejemplos\ErrSem9\ErrSem9.prg
+java Main ..\..\ejemplos\ErrSem10\ErrSem10.prg
 
 //ErrSint
-java Main ..\ejemplos\ErrSint1\ErrSint1.prg
-java Main ..\ejemplos\ErrSint2\ErrSint2.prg
-java Main ..\ejemplos\ErrSint3\ErrSint3.prg
+java Main ..\..\ejemplos\ErrSint1\ErrSint1.prg
+java Main ..\..\ejemplos\ErrSint2\ErrSint2.prg
+java Main ..\..\ejemplos\ErrSint3\ErrSint3.prg
