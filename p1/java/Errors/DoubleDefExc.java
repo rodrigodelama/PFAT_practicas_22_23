@@ -2,12 +2,14 @@ package Errors;
 
 public class DoubleDefExc extends CompilerExc{
     
-    public DoubleDefExc (String name){
-        super(name);
-        //catch DoubleDefExc e{
-            //System.err.println("Error in varibale " + e);
+    private String ident;
+    
+    public DoubleDefExc (String ident) {
+        this.ident = ident;
+    }
 
-        //}
+    public String toString() {
+        return "Var doubly defined -> " + this.ident;
     }
 
 }

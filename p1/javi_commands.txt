@@ -36,6 +36,7 @@ javac -d . Main.java
 cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
 javac -d ../class Errors/*.java
 javac -d ../class AST/*.java
+javac -d ../class Compiler/*.java
 cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/

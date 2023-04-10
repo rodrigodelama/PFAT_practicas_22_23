@@ -2,6 +2,8 @@ package Parser;
 
 import java_cup.runtime.*;
 import AST.*;
+import Errors.*;
+import Compiler.*;
 
 parser code {:
 public void syntax_error(Symbol s) {
