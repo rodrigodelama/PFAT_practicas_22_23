@@ -24,6 +24,6 @@ public class Multiplicacion implements Exp {
             return Typ.t_real;
             
         }
-        throw new TypExc("Error en multiplicacion");
+        throw new TypExc("Error en Multiplicacion");
     }
 }

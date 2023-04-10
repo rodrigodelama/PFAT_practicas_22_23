@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.CompilerExc;
+
 public class Sent2 implements Sentencia {
     public final Sentencia ss;
     

@@ -18,7 +18,7 @@ public class Plot implements Sentencia {
         t1 = e1.computeTyp();
         t2 = e2.computeTyp();
         if((t1==Typ.t_int) && (t2 == Typ.t_int)){
-            return void;
+            return Typ.t_void;
         }
         else{
             throw new TypExc("Error en Plot");

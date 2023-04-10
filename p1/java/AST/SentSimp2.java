@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.CompilerExc;
+
 public class SentSimp2 implements Sentencia {
     public final Plot p;
 

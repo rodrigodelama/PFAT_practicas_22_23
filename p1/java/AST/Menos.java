@@ -24,6 +24,6 @@ public class Menos implements Exp {
             return Typ.t_real;
             
         }
-        throw new TypExc("Error en resta");
+        throw new TypExc("Error en Resta");
     }
 }

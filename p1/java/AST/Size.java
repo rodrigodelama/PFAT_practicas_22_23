@@ -21,7 +21,7 @@ public class Size {
         t2 = exp2.computeTyp();
         if((t1==Typ.t_int) && (t2 == Typ.t_int)){
             //CHECK void?
-            return void;
+            return Typ.t_void;
         }
         else{
             throw new TypExc("Error en size");

@@ -1,6 +1,9 @@
 package AST;
 
 import Compiler.SymbolTable;
+import Errors.CompilerExc;
+import Errors.TypExc;
+import Compiler.Typ;
 
 public class Asignacion implements Sentencia {
     public final String id;
@@ -17,7 +20,7 @@ public class Asignacion implements Sentencia {
         t1 = SymbolTable.getType(id);
         t2 = e.computeTyp();
         if(t1==t2){
-            return void;
+            return Typ.t_void;
         }
         else{
             throw new TypExc("Error en Assign");

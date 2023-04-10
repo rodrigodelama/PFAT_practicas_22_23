@@ -1,5 +1,6 @@
 package AST;
 
+import Compiler.SymbolTable;
 import Errors.CompilerExc;
 
 public class LVar2 implements LVar {
