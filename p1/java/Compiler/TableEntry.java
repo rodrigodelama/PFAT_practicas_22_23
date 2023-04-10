@@ -5,7 +5,7 @@ public class TableEntry {
     private int type;
 
     public TableEntry(String n, int type){
-        name=n;
+        this.name=n;
         this.type=type;
     }
 

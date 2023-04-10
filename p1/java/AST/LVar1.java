@@ -11,14 +11,14 @@ public class LVar1 implements LVar {
         this.identifier = identifier;
     }
     public void computeAH1(int t) throws CompilerExc{
-        ah1=t;
-        System.out.println("Valor en lVAR1 -> " + ah1 + "->" + identifier);
-        SymbolTable.newEntry(identifier,ah1);
+        this.ah1=t;
+        System.out.println("Valor en lVAR1 -> " + this.ah1 + "->" + this.identifier);
+        SymbolTable.newEntry(this.identifier,this.ah1);
 
     }
 
     public int getAH1(){
-        return ah1;
+        return this.ah1;
     }
 }
 

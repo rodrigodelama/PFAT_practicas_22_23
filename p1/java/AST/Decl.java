@@ -11,7 +11,8 @@ public class Decl {
         this.lvars = lvars;
     }
     public void computeAH1() throws CompilerExc{
-        int ah1=type;
+        int ah1= this.type;
+        System.out.println("ah1 ->" + ah1);
         lvars.computeAH1(ah1);
     }
 }

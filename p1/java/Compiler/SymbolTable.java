@@ -20,6 +20,7 @@ public class SymbolTable {
 
     public static int getType (String name) throws VarNoDefExc{
         TableEntry e=search(name);
+        //System.out.println("Table_Entry name -> " + e.getName() + "type -> " + e.getType());
         if(e==null){
             throw new VarNoDefExc(name);
         }
