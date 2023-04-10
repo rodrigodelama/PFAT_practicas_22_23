@@ -25,13 +25,13 @@ public class Main {
         sc = new Yylex(in);
         p = new parser(sc);
         sroot = p.parse();
-        if(!p.error){
-          System.out.println("Analisis lexico y sintactico correctos");
 
-          Prog programa=(Prog) sroot.value;
-          programa.computeAH1();
-          programa.computeTyp();
-        }
+        System.out.println("Analisis lexico y sintactico correctos");
+        
+        Prog programa = (Prog) sroot.value;
+        programa.computeAH1();
+        programa.computeTyp();
+
       } catch (IOException e) {
         System.out.println("Error abriendo fichero: " + args[0]);
         error = true;
