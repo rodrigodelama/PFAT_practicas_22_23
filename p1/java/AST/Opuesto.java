@@ -21,6 +21,6 @@ public class Opuesto implements Exp {
             return Typ.t_real;
             
         }
-        throw new TypExc("Error en opuesto");
+        throw new TypExc("Error en Opuesto");
     }
 }

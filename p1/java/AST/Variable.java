@@ -8,6 +8,6 @@ public class Variable implements Exp {
         this.ident = ident;
     }
     public int computeTyp() throws CompilerExc{
-        return SymbolTable.getType(ident);//si no lanza la excepcion, entonces devuelve el identificador
+        return SymbolTable.getType(this.ident);//si no lanza la excepcion, entonces devuelve el numero del tipo.
     }
 }

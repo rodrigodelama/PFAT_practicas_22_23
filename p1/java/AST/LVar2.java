@@ -15,6 +15,7 @@ public class LVar2 implements LVar {
 
     public void computeAH1(int t) throws CompilerExc{
         ah1=t;
+        System.out.println("Valor en lVAR2 -> " + ah1 + "->" + identifier);
         lv.computeAH1(t);
         SymbolTable.newEntry(identifier,ah1);
     }

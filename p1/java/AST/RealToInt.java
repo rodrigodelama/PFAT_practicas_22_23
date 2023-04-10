@@ -16,7 +16,7 @@ public class RealToInt implements Exp {
         t1 = e1.computeTyp();
         
         if ((t1==Typ.t_real)){
-            return Typ.t_real;
+            return Typ.t_int;
         }else{
             throw new TypExc("Error en RealToInt");
         }

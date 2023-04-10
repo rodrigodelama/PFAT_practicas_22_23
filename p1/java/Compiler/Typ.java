@@ -12,7 +12,7 @@ public class Typ {
             return "int";
         }
         if(typ==t_bool){
-            return "boolean";
+            return "bool";
         }
         if(typ==t_real){
             return "real";

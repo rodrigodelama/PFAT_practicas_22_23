@@ -22,7 +22,8 @@ public class Suma implements Exp {
         }else if ((t1==Typ.t_real) && (t2 == Typ.t_real)){
             return Typ.t_real;
             
+        }else{
+            throw new TypExc("Error en suma");
         }
-        throw new TypExc("Error en suma");
     }
 }

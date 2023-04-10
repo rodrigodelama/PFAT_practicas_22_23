@@ -20,7 +20,6 @@ public class Size {
         t1 = exp1.computeTyp();
         t2 = exp2.computeTyp();
         if((t1==Typ.t_int) && (t2 == Typ.t_int)){
-            //CHECK void?
             return Typ.t_void;
         }
         else{

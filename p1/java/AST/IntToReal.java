@@ -16,7 +16,7 @@ public class IntToReal implements Exp {
         t1 = e1.computeTyp();
         
         if ((t1==Typ.t_int)){
-            return Typ.t_int;
+            return Typ.t_real;
         }else{
             throw new TypExc("Error en IntToReal");
         }
