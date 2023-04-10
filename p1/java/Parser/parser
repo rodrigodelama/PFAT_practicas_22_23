@@ -55,9 +55,9 @@ start with Prog;
 
 Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ;
 
-Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = new Inp1(); :} ;
+Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = new Inp2(); :} ;
 
-Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = new Vars1(); :} ;
+Vars ::= VARS VDef:vd {:RESULT=new Vars1(vd); :} | {:RESULT = new Vars2(); :} ;
 
 VDef ::= Decl:d PC {:RESULT=new VDef1(d); :} | Decl:d PC VDef:v {:RESULT=new VDef2(d,v); :} ;
 
