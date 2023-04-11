@@ -17,6 +17,7 @@ public class And implements Exp {
         int t1, t2;
         t1 = e1.computeTyp();
         t2 = e2.computeTyp();
+
         if((t1 == Typ.t_bool) && (t2 == Typ.t_bool)) {
             return Typ.t_bool;
         } else {

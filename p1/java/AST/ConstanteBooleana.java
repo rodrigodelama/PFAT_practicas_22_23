@@ -7,7 +7,7 @@ public class ConstanteBooleana implements Exp {
     public ConstanteBooleana(boolean c) {
         this.c = c;
     }
-    
+
     public int computeTyp() throws CompilerExc {
         return Typ.t_bool;
     }

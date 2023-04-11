@@ -14,7 +14,7 @@ public class IntToReal implements Exp {
     public int computeTyp() throws CompilerExc {
         int t1;
         t1 = e1.computeTyp();
-        
+
         if ((t1 == Typ.t_int)) {
             return Typ.t_real;
         } else {

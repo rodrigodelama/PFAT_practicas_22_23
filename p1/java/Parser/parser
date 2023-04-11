@@ -25,9 +25,8 @@ MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
 terminal Integer TIPO, CENT;
 terminal Float CREAL, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
-terminal Boolean CLOG; //Para bool
+terminal Boolean CLOG;
 terminal String IDENT, COLOR;
-//no se si se puede agrupar más, la clase Sentencia estoy bastante seguro de que es asi
 non terminal Prog Prog;
 non terminal VDef VDef;
 non terminal Vars Vars;
@@ -52,7 +51,6 @@ precedence left UMENOS;
 start with Prog;
 
 //Expresiones Regulares
-
 Prog ::= PROG IDENT:i1 Inp:in Vars:v Size:s Sent:e {:RESULT=new Prog(i1, in, v, s, e); :} ;
 
 Inp ::= PAREN LVar:lv TESIS {:RESULT=new Inp1(lv); :} | {:RESULT = new Inp2(); :} ;

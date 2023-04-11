@@ -20,7 +20,7 @@ public class Condicional2 implements Sentencia {
         t1 = e.computeTyp();
         t2 = s1.computeStTyp();
         t3 = s2.computeStTyp();
-        
+
         if((t1 == Typ.t_bool) && (t2 == Typ.t_void) && (t3 == Typ.t_void)) {
             return Typ.t_void;
         } else {

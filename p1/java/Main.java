@@ -14,8 +14,7 @@ public class Main {
 
     // El primer parametro es el nombre del fichero con el programa
     if (args.length < 1) {
-      System.out.println(
-          "Uso: java Main <nombre_fichero>");
+      System.out.println("Uso: java Main <nombre_fichero>");
       error = true;
     }
 

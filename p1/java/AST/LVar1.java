@@ -14,7 +14,6 @@ public class LVar1 implements LVar {
     public void computeAH1(int t) throws CompilerExc {
         this.ah1 = t;
         SymbolTable.newEntry(this.identifier,this.ah1);
-
     }
 
     public int getAH1() {

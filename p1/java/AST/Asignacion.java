@@ -18,6 +18,7 @@ public class Asignacion implements Sentencia {
         int t1, t2;
         t1 = SymbolTable.getType(id);
         t2 = e.computeTyp();
+        
         if(t1 == t2) {
             return Typ.t_void;
         } else {
