@@ -10,7 +10,7 @@ public class Ejemplo {
 	obj1.setVar1(2);
 	obj2.setVar2(3);
 
-	System.out.println(obj1.getVar1() + " + " + obj2.getVar2() + " = " + (obj1.getVar1() + obj2.getVar2()));
+	
     }
 }
 

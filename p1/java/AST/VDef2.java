@@ -8,10 +8,11 @@ public class VDef2 implements VDef {
 
     public VDef2(Decl d, VDef v) {
         this.d = d;
-        this.v=v;
+        this.v = v;
     }
 
     public void computeAH1() throws CompilerExc {
         d.computeAH1();
+        v.computeAH1();
     }
 }

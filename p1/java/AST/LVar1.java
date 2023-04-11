@@ -13,7 +13,6 @@ public class LVar1 implements LVar {
 
     public void computeAH1(int t) throws CompilerExc {
         this.ah1 = t;
-        System.out.println("Valor en lVAR1 -> " + this.ah1 + "-> " + this.identifier);
         SymbolTable.newEntry(this.identifier,this.ah1);
 
     }
