@@ -31,7 +31,7 @@ public class Main {
         Prog programa = (Prog) sroot.value;
         programa.computeAH1();
         programa.computeTyp();
-
+        System.out.println("Analisis Semantico correcto");
       } catch (IOException e) {
         System.out.println("Error abriendo fichero: " + args[0]);
         error = true;

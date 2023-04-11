@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Grupo nick="Compitrio">
+  <Alumno>
+    <NIU><![CDATA[100451824]]></NIU>
+    <Apellidos><![CDATA[SCARPA GONZALEZ]]></Apellidos>
+    <Nombre><![CDATA[MATIAS]]></Nombre>
+    <GrupoReducido><![CDATA[g71]]></GrupoReducido>
+  </Alumno>
+  <Alumno>
+    <NIU><![CDATA[100451802]]></NIU>
+    <Apellidos><![CDATA[CHEN]]></Apellidos>
+    <Nombre><![CDATA[YONGBIN]]></Nombre>
+    <GrupoReducido><![CDATA[g71]]></GrupoReducido>
+  </Alumno>
+  <Alumno>
+    <NIU><![CDATA[100451775]]></NIU>
+    <Apellidos><![CDATA[DE LAMA FERNANDEZ]]></Apellidos>
+    <Nombre><![CDATA[RODRIGO]]></Nombre>
+    <GrupoReducido><![CDATA[g71]]></GrupoReducido>
+  </Alumno>
+</Grupo>
