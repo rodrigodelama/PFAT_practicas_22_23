@@ -17,12 +17,12 @@ public class Prog {
         this.sentence = sentence;
     }
 
-    public void computeAH1() throws CompilerExc{ //Heredados
+    public void computeAH1() throws CompilerExc { //Heredados
         input.computeAH1();
         variables.computeAH1();
     }
 
-    public void computeTyp() throws CompilerExc{
+    public void computeTyp() throws CompilerExc {
         size.computeTyp();
         sentence.computeTyp();
     }

@@ -14,16 +14,14 @@ public class Asignacion implements Sentencia {
         this.e = e;
     }
 
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         int t1, t2;
         t1 = SymbolTable.getType(id);
         t2 = e.computeTyp();
         System.out.println("t1 -> " + t1 + " t2 -> " + t2);
-        if(t1==t2){
+        if(t1 == t2) {
             return Typ.t_void;
-        }
-        else{
+        } else {
             throw new TypExc("Error en Assign");
         } 
     }

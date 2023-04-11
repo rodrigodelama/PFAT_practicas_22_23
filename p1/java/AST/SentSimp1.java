@@ -9,8 +9,7 @@ public class SentSimp1 implements Sentencia {
         this.as = as;
     }
 
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         return as.computeTyp();
     }
 }

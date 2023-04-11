@@ -1,6 +1,6 @@
 package Errors;
 
-public class DoubleDefExc extends CompilerExc{
+public class DoubleDefExc extends CompilerExc {
     
     private String ident;
     
@@ -11,5 +11,4 @@ public class DoubleDefExc extends CompilerExc{
     public String toString() {
         return "Var doubly defined -> " + this.ident;
     }
-
 }

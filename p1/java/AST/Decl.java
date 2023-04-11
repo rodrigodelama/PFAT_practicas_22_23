@@ -10,9 +10,10 @@ public class Decl {
         this.type = type;
         this.lvars = lvars;
     }
-    public void computeAH1() throws CompilerExc{
-        int ah1= this.type;
-        System.out.println("ah1 ->" + ah1);
+
+    public void computeAH1() throws CompilerExc {
+        int ah1 = this.type;
+        System.out.println("ah1 -> " + ah1);
         lvars.computeAH1(ah1);
     }
 }

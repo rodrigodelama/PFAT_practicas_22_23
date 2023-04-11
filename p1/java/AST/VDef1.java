@@ -8,8 +8,8 @@ public class VDef1 implements VDef {
     public VDef1(Decl d) {
         this.d = d;
     }
-    public void computeAH1() throws CompilerExc{
+
+    public void computeAH1() throws CompilerExc {
         d.computeAH1();
     }
-
 }

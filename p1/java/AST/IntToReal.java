@@ -10,14 +10,14 @@ public class IntToReal implements Exp {
     public IntToReal(Exp e1) {
         this.e1 = e1;
     }
-    public int computeTyp() throws CompilerExc{
 
+    public int computeTyp() throws CompilerExc {
         int t1;
         t1 = e1.computeTyp();
         
-        if ((t1==Typ.t_int)){
+        if ((t1 == Typ.t_int)) {
             return Typ.t_real;
-        }else{
+        } else {
             throw new TypExc("Error en IntToReal");
         }
     }

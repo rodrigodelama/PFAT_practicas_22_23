@@ -13,15 +13,14 @@ public class Iteracion implements Sentencia {
         this.s = s;
     }
 
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         int t1, t2;
         t1 = e.computeTyp();
         t2 = s.computeTyp();
-        if((t1==Typ.t_bool) && (t2 == Typ.t_void)){
+
+        if((t1 == Typ.t_bool) && (t2 == Typ.t_void)) {
             return Typ.t_void;
-        }
-        else{
+        } else {
             throw new TypExc("Error en Condicional");
         } 
     }

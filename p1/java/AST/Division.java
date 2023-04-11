@@ -12,17 +12,18 @@ public class Division implements Exp {
         this.e1 = e1;
         this.e2 = e2;
     }
-    public int computeTyp() throws CompilerExc{
+
+    public int computeTyp() throws CompilerExc {
 
         int t1, t2;
         t1 = e1.computeTyp();
         t2 = e2.computeTyp();
-        if((t1==Typ.t_int) && (t2 == Typ.t_int)){
+        
+        if((t1==Typ.t_int) && (t2 == Typ.t_int)) {
             return Typ.t_int;
 
-        }else if ((t1==Typ.t_real) && (t2 == Typ.t_real)){
+        } else if ((t1==Typ.t_real) && (t2 == Typ.t_real)) {
             return Typ.t_real;
-            
         }
         throw new TypExc("Error en division");
     }

@@ -12,15 +12,14 @@ public class Sent1 implements Sentencia {
         this.ss = ss;
         this.s = s;
     }
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         int t1, t2;
         t1 = ss.computeTyp();
         t2 = s.computeTyp();
-        if((t1==Typ.t_void) && (t2 == Typ.t_void)){
+
+        if((t1 == Typ.t_void) && (t2 == Typ.t_void)) {
             return Typ.t_void;
-        }
-        else{
+        } else {
             throw new TypExc("Error en Sent");
         } 
     }

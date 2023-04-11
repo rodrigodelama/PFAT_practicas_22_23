@@ -7,14 +7,14 @@ public class Typ {
     //TODO: pendiente de type Colors;
     public static final int t_void = 600;
 
-    public static String typToString(int typ){
-        if(typ==t_int){
+    public static String typToString(int typ) {
+        if(typ == t_int) {
             return "int";
         }
-        if(typ==t_bool){
+        if(typ == t_bool) {
             return "bool";
         }
-        if(typ==t_real){
+        if(typ == t_real) {
             return "real";
         }
         return "void";

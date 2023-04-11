@@ -7,7 +7,7 @@ public class Variable implements Exp {
     public Variable(String ident) {
         this.ident = ident;
     }
-    public int computeTyp() throws CompilerExc{
-        return SymbolTable.getType(this.ident);//si no lanza la excepcion, entonces devuelve el numero del tipo.
+    public int computeTyp() throws CompilerExc {
+        return SymbolTable.getType(this.ident); //si no lanza la excepcion, entonces devuelve el numero del tipo.
     }
 }

@@ -11,7 +11,7 @@ public class VDef2 implements VDef {
         this.v=v;
     }
 
-    public void computeAH1() throws CompilerExc{
+    public void computeAH1() throws CompilerExc {
         d.computeAH1();
     }
 }

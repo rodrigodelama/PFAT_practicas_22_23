@@ -9,8 +9,7 @@ public class Vars1 implements Vars {
         this.vd = vd;
     }
 
-    public void computeAH1() throws CompilerExc{
+    public void computeAH1() throws CompilerExc {
         vd.computeAH1();
     }
-
 }

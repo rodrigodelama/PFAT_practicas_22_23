@@ -6,36 +6,36 @@ import Errors.DoubleDefExc;
 import Errors.VarNoDefExc;
 
 public class SymbolTable {
-    private static Vector<TableEntry> table =new Vector<TableEntry>();
+    private static Vector<TableEntry> table = new Vector<TableEntry>();
 
     public static void newEntry(String name, int type) throws DoubleDefExc {
-        TableEntry e= search(name);
-        if(e==null){
-            e=new TableEntry(name, type);
+        TableEntry e = search(name);
+        if(e == null) {
+            e = new TableEntry(name, type);
             table.add(e);
-        } else{
+        } else {
             throw new DoubleDefExc(name);
         }
     }
 
-    public static int getType (String name) throws VarNoDefExc{
-        TableEntry e=search(name);
+    public static int getType (String name) throws VarNoDefExc {
+        TableEntry e = search(name);
         //System.out.println("Table_Entry name -> " + e.getName() + "type -> " + e.getType());
-        if(e==null){
+        if(e == null) {
             throw new VarNoDefExc(name);
         }
         return(e.getType());
     }
 
-    private static TableEntry search (String name){
-        TableEntry e=null;
-        int i=0;
-        while(i<table.size()){            
-            e=table.get(i);
-            if(e.getName().equals(name)){
+    private static TableEntry search (String name) {
+        TableEntry e = null;
+        int i = 0;
+        while(i < table.size()) {            
+            e = table.get(i);
+            if(e.getName().equals(name)) {
                 break;
             }
-            e=null;
+            e = null;
             i++;
         }
         return e;

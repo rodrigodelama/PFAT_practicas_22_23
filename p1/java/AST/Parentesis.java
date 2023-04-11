@@ -10,7 +10,7 @@ public class Parentesis implements Exp {
     }
     
     //<Exp>.typ= <Exp>1.typ
-    public int computeTyp() throws CompilerExc{
+    public int computeTyp() throws CompilerExc {
         return e.computeTyp();
     }
 }

@@ -10,16 +10,15 @@ public class Opuesto implements Exp {
     public Opuesto(Exp e) {
         this.e = e;
     }
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         int t1;
         t1 = e.computeTyp();
-        if((t1==Typ.t_int)){
+
+        if((t1 == Typ.t_int)) {
             return Typ.t_int;
 
-        }else if ((t1==Typ.t_real)){
+        } else if ((t1 == Typ.t_real)) {
             return Typ.t_real;
-            
         }
         throw new TypExc("Error en Opuesto");
     }

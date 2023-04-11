@@ -1,6 +1,6 @@
 package Errors;
 
-public class VarNoDefExc extends CompilerExc{ //por la cabecera del metodo Exp
+public class VarNoDefExc extends CompilerExc { //por la cabecera del metodo Exp
     
     private String ident;
     
@@ -11,5 +11,4 @@ public class VarNoDefExc extends CompilerExc{ //por la cabecera del metodo Exp
     public String toString() {
         return "Var not defined -> " + this.ident;
     }
-
 }

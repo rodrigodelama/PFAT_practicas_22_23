@@ -10,9 +10,8 @@ public class Inp1 implements Inp {
         this.lv = lv;
     }
 
-    public void computeAH1() throws CompilerExc{
+    public void computeAH1() throws CompilerExc {
         //200 is for int: see yylex
         lv.computeAH1(Typ.t_int);
     }
-
 }

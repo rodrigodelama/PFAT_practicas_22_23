@@ -10,14 +10,14 @@ public class Seno implements Exp {
     public Seno(Exp e1) {
         this.e1 = e1;
     }
-    public int computeTyp() throws CompilerExc{
 
+    public int computeTyp() throws CompilerExc {
         int t1;
         t1 = e1.computeTyp();
-        
-        if ((t1==Typ.t_real)){
+
+        if ((t1 == Typ.t_real)) {
             return Typ.t_real;
-        }else{
+        } else {
             throw new TypExc("Error en Seno");
         }
     }

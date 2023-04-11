@@ -14,17 +14,15 @@ public class Size {
     
     //<Size>.st_typ= if (<Exp>.typ== int) 
     //and (<Exp>1.typ== int) then void else typ_err
-    public int computeTyp() throws CompilerExc{
-
+    public int computeTyp() throws CompilerExc {
         int t1, t2;
         t1 = exp1.computeTyp();
         t2 = exp2.computeTyp();
-        if((t1==Typ.t_int) && (t2 == Typ.t_int)){
+
+        if((t1 == Typ.t_int) && (t2 == Typ.t_int)) {
             return Typ.t_void;
-        }
-        else{
+        } else {
             throw new TypExc("Error en size");
         }
     }
-
 }
