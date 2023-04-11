@@ -15,11 +15,11 @@ public class Condicional2 implements Sentencia {
         this.s2 = s2;
     }
 
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2, t3;
         t1 = e.computeTyp();
-        t2 = s1.computeTyp();
-        t3 = s2.computeTyp();
+        t2 = s1.computeStTyp();
+        t3 = s2.computeStTyp();
         
         if((t1 == Typ.t_bool) && (t2 == Typ.t_void) && (t3 == Typ.t_void)) {
             return Typ.t_void;

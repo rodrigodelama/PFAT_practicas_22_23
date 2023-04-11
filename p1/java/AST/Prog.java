@@ -23,7 +23,7 @@ public class Prog {
     }
 
     public void computeTyp() throws CompilerExc {
-        size.computeTyp();
-        sentence.computeTyp();
+        size.computeStTyp();
+        sentence.computeStTyp();
     }
 }

@@ -14,7 +14,7 @@ public class Asignacion implements Sentencia {
         this.e = e;
     }
 
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = SymbolTable.getType(id);
         t2 = e.computeTyp();

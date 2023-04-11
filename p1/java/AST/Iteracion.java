@@ -13,10 +13,10 @@ public class Iteracion implements Sentencia {
         this.s = s;
     }
 
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = e.computeTyp();
-        t2 = s.computeTyp();
+        t2 = s.computeStTyp();
 
         if((t1 == Typ.t_bool) && (t2 == Typ.t_void)) {
             return Typ.t_void;

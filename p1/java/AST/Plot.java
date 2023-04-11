@@ -12,7 +12,7 @@ public class Plot implements Sentencia {
         this.e2 = e2;
     }
 
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = e1.computeTyp();
         t2 = e2.computeTyp();

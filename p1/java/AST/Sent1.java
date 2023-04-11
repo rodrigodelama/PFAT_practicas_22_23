@@ -12,10 +12,10 @@ public class Sent1 implements Sentencia {
         this.ss = ss;
         this.s = s;
     }
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2;
-        t1 = ss.computeTyp();
-        t2 = s.computeTyp();
+        t1 = ss.computeStTyp();
+        t2 = s.computeStTyp();
 
         if((t1 == Typ.t_void) && (t2 == Typ.t_void)) {
             return Typ.t_void;

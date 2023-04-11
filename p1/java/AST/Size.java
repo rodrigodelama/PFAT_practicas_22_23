@@ -14,7 +14,7 @@ public class Size {
     
     //<Size>.st_typ= if (<Exp>.typ== int) 
     //and (<Exp>1.typ== int) then void else typ_err
-    public int computeTyp() throws CompilerExc {
+    public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = exp1.computeTyp();
         t2 = exp2.computeTyp();

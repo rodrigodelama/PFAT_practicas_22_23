@@ -9,7 +9,7 @@ public class Sent2 implements Sentencia {
         this.ss = ss;
     }
 
-    public int computeTyp() throws CompilerExc {
-        return ss.computeTyp();
+    public int computeStTyp() throws CompilerExc {
+        return ss.computeStTyp();
     }
 }
