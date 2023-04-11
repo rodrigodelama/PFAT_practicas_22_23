@@ -2,7 +2,7 @@
 java Main ..\ejemplos\Ejem1\Rectangulo.prg
 java Main ..\ejemplos\Ejem2\Diagonal1.prg
 java Main ..\ejemplos\Ejem3\Diagonal2.prg
-java Main ..\ejemplos\Ejem4\Diagonal1.prg
+java Main ..\ejemplos\Ejem4\Triangulo1.prg
 java Main ..\ejemplos\Ejem5\Circulo.prg
 java Main ..\ejemplos\Ejem6\Circulo.prg
 java Main ..\ejemplos\Ejem7\Triangulo2.prg
