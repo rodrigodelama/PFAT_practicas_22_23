@@ -26,4 +26,7 @@ public class Prog {
         size.computeStTyp();
         sentence.computeStTyp();
     }
+
+	// public void generateCode(BufferedWriter w) throws IOException;
+
 }
