@@ -1,0 +1,12 @@
+public class Conditional implements Statement {
+    public final Exp expL;
+    public final Statement stThen;
+
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
+        w.write(indent + "if (" + expL.generateCode() + ") {");
+        w.newLine();
+        stThen.generateCode(w, indent +  "_");
+        w.newLine();
+        w.write(indent + "}");
+    }
+}
