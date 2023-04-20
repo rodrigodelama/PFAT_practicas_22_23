@@ -10,3 +10,95 @@ public class Conditional implements Statement {
         w.write(indent + "}");
     }
 }
+
+
+public class Progv1 implements Prog {
+    public 
+}
+//me lo borraron - no fui rapido
+
+
+public class LVar1 implements LVar {
+    public final String indent;
+    public final LVar lv;
+    private int ind;
+    
+    public void computeInd(int i) {
+        ind = i;
+        lv.computeInd(ind + 1);
+    }
+
+    public int getInd() {
+        return ind:
+    }
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write(" String " public class ProgArgs { + indent +"= \"\";");
+        public final LVar lv;
+        w.newLine();
+        w.write("if(_args.legth" + "> " + ind + ") {");
+        w.newLine();
+        w.write("_" + indent + "= _args["+ ind + "];");
+        w.newLine()
+        w.write("}");
+        lv.generateCode(w); // THIS DOES NOT EXIST IN LVar2
+    }
+
+}
+
+
+public class LVar2 implements LVar {
+    public final String indent;
+    private int ind;
+
+    public void computeInd(int i) {
+        ind = i;
+    }
+    public int getind() {
+        return ind;
+    }
+}
+
+
+public class ProgArgs {
+    public final LVar lv;
+    
+    public void computeInd() {
+        lv.computeInd(0);
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        lv.generateCode(w);
+    }
+}
+
+
+EJERCICIO 1
+
+public class Variable implements Exp {
+    public String generateCode() {
+        return "x";
+    }
+}
+
+public class CInt implements Exp {
+    public final int c;
+    public String generateCode() {
+        return ""+c;
+    }
+}
+
+public class Sum implements Exp {
+    public final Exp exp1, exp2;
+    public String generateCode() {
+        return "(" + exp1.generateCode() +  "+" + exp2.generateCode() + ")";
+        // ACORDARSE DE LOS PARENTESIS PARA QUE NUESTRO NUEVO ORDEN DE PRECEDENCIA SEA AJUSTADO
+        //EN JAVA ES OTRO ORDEN
+    }
+}
+
+public class Product implements Exp {
+    public final Exp exp1, exp2;
+    public String generateCode() {
+        return exp1.generateCode() +  "*" + exp2.generateCode();
+    }
+}
