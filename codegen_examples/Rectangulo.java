@@ -6,9 +6,9 @@ public class Rectangulo {
         if(args.length < 3) {
             return;
         }
-
-        int ancho = Integer.parseInt(args[1]);
-        int alto = Integer.parseInt(args[2]);
+        //inp
+        int ancho = Integer.parseInt(args[0]);
+        int alto = Integer.parseInt(args[1]);
 
         //if ancho o alto es negativo
         if(ancho < 0 || alto < 0) {

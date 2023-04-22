@@ -6,6 +6,8 @@ import Errors.CompilerExc;
 public class LVar1 implements LVar {
     public final String identifier;
     private int ah1;
+    private int ind;
+    private int args_length;
 
     public LVar1(String identifier) {
         this.identifier = identifier;
@@ -19,5 +21,23 @@ public class LVar1 implements LVar {
     public int getAH1() {
         return this.ah1;
     }
+
+    public void computeInd(int args) throws CompilerExc {
+        this.ind = args;
+    }
+
+    public int getInd() {
+        return this.ind;
+    } 
+
+    public int getArgsLength() {
+        args_length = ind;
+        return args_length;
+    }
+    public void generateCode() {
+        
+    }
+
+
 }
 

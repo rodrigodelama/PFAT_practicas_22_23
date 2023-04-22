@@ -11,7 +11,7 @@ public class Main {
     parser p;
     java_cup.runtime.Symbol sroot;
     boolean error = false;
-
+    Prog programa = null;
     // El primer parametro es el nombre del fichero con el programa
     if (args.length < 1) {
       System.out.println("Uso: java Main <nombre_fichero>");
@@ -27,7 +27,7 @@ public class Main {
 
         System.out.println("Analisis lexico y sintactico correctos");
         
-        Prog programa = (Prog) sroot.value;
+        programa = (Prog) sroot.value;
         programa.computeAH1();
         programa.computeTyp();
         System.out.println("Analisis Semantico correcto");
@@ -35,6 +35,29 @@ public class Main {
         System.out.println("Error abriendo fichero: " + args[0]);
         error = true;
       }
+    }
+    //Generación de código
+    if (!error) {
+      programa.computeInd(); //TODO para 
+      try {
+          String nombreFicheroJava= args[1] + ".java";//nombre del ejecutable 
+          BufferedWriter w= new BufferedWriter(new FileWriter(nombreFicheroJava));
+          //TODO   w.write("package GeneratedCodeLib;");
+          w.newLine(); 
+          w.write("public class " + args[1] + " {");
+          w.newLine();
+          w.newLine(); 
+          programa.generateCode(w, "  "); //
+          w.newLine(); 
+          w.write("}");
+          w.newLine(); 
+          w.newLine(); 
+          w.close();
+          System.out.println("Codigo generado en fichero " + nombreFicheroJava);
+      } catch(IOException e) {
+          System.out.println("Error abriendo fichero: " + args[1] + ".java");
+          error= true;
+      } 
     }
   }
 }

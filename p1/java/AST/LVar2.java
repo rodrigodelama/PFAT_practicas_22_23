@@ -7,6 +7,8 @@ public class LVar2 implements LVar {
     public final String identifier;
     public final LVar lv;
     private int ah1;
+    private int ind;
+    private int args_length;
 
     public LVar2(String identifier, LVar l) {
         this.identifier = identifier;
@@ -22,5 +24,19 @@ public class LVar2 implements LVar {
 
     public int getAH1() {
         return ah1;
+    }
+
+    public void computeInd(int args) throws CompilerExc {
+        ind=args;
+        lv.computeInd(ind + 1);
+    }
+
+    public int getInd() {
+        return ind;
+    }
+
+    public int getArgsLength() {
+        args_length = lv.getArgsLength();
+        return args_length;
     }
 }
