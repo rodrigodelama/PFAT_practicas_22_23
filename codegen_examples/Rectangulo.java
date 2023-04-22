@@ -1,4 +1,3 @@
-package p1.ejemplos.Ejem1;
 // traduccion para ver como hacer el traductor codeGenerator
 import GeneratedCodeLib.*;
 public class Rectangulo {
@@ -11,7 +10,7 @@ public class Rectangulo {
         int ancho = Integer.parseInt(args[1]);
         int alto = Integer.parseInt(args[2]);
 
-        //if ancho o alto es negativo, sys.err.println("error") y return
+        //if ancho o alto es negativo
         if(ancho < 0 || alto < 0) {
             System.err.println("Error: ancho o alto negativo");
             return;
