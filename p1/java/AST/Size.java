@@ -25,4 +25,5 @@ public class Size {
             throw new TypExc("Error en size");
         }
     }
+    
 }
