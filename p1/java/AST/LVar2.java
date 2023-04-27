@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.SymbolTable;
 import Errors.CompilerExc;
 
@@ -38,5 +41,16 @@ public class LVar2 implements LVar {
     public int getArgsLength() {
         args_length = lv.getArgsLength();
         return args_length;
+    }
+    public void generateCode(BufferedWriter w, String tabs) throws IOException{
+        w.write(identifier);
+        w.write(", ");
+        lv.generateCode(w, tabs);
+
+    }
+    public void generateCodeInp(BufferedWriter w, String tabs) throws IOException{
+        w.write("int " + identifier + " = Integer.parseInt(args["+ ind +"]);");
+        w.newLine();
+        lv.generateCodeInp(w, tabs);
     }
 }

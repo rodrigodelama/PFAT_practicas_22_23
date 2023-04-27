@@ -4,6 +4,7 @@ public class Rectangulo {
     
     public static void main(String[] args) {
         if(args.length != 3) {
+            System.err.println("Error: numero de argumentos incorrecto");
             return;
         }
         //inp

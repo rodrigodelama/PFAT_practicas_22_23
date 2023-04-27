@@ -1,15 +1,20 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.*;
 import Errors.*;
 
 public class Plot implements Sentencia {
     public final Exp e1;
     public final Exp e2;
+    
 
-    public Plot(Exp e1, Exp e2) {
+    public Plot(Exp e1, Exp e2, int color) {
         this.e1 = e1;
         this.e2 = e2;
+        
     }
 
     public int computeStTyp() throws CompilerExc {
@@ -23,4 +28,8 @@ public class Plot implements Sentencia {
             throw new TypExc("Error en Plot");
         }
     }
+    public void generateCode(BufferedWriter w, String indent) throws IOException{
+        
+    }
+
 }

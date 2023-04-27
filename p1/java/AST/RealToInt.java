@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -21,4 +24,11 @@ public class RealToInt implements Exp {
             throw new TypExc("Error en RealToInt");
         }
     }
-}
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write("((int) ");
+        e1.generateCode(w);
+        w.write(")");//entre parentesis para cumplir la regla de produccion.
+        
+    }
+}   

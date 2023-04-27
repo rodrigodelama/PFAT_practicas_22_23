@@ -43,20 +43,32 @@ public class Prog {
 	public void generateCode(BufferedWriter w, String indent) throws IOException {
         w.write(indent+"public static void main(String _args[]) {");
         w.newLine();
-        w.write(indent+"    "+"if(args.length != " + (args_length+2) + ") {");// el +2 es por el tamaño del array args (args_lenght + 1) y por
-        //el hecho de que el numero a la derecha de la condicion del if deber ser mayor aun que (args_length + 1) -> (args_length + 2).
+        w.write(indent+"    "+"if(args.length != " + (args_length+2) + ") {");// +2 porque empieza en 0 y el nombre del archivo bmp
+        w.newLine();
+        w.write(indent+"        "+"System.err.println(\"Error: invalid number of arguments\");");
         w.newLine();
         w.write(indent+"        "+"return;");
         w.newLine();
         w.write(indent+"    "+"}");
-        w.newLine();
-        input.generateCode(w, indent+"  ");
-        // argumento.generateCode(w);
+        w.newLine();    
+        input.generateCode(w, indent+ " ");
+        size.generateCode(w, indent+"   ");
+        variables.generateCode(w, indent+"   ");
+        sentence.generateCode(w, indent+"   ");
+
+
+
+
+
+
+
+        // argumento.generateCode(w);   
         // w.newLine();
         // vars.generateCode(w);
         // w.newLine();
         // sent.generateCode(w);
         //BMP_Gen.map2BMP(alto + 10, ancho + 10, flatArray, args[args_length + 1]);
+        //TODO
         w.write(indent + "BMP_Gen.map2BMP(");
         w.write("");
         w.newLine();

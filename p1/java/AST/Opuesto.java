@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -21,5 +24,11 @@ public class Opuesto implements Exp {
             return Typ.t_real;
         }
         throw new TypExc("Error en Opuesto");
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write("-");
+        e.generateCode(w);
+        
     }
 }

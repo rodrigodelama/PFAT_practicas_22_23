@@ -12,4 +12,5 @@ public interface LVar {
     public int getInd() ;
     public int getArgsLength();
     public void generateCode(BufferedWriter w, String tabs) throws IOException;
+    public void generateCodeInp(BufferedWriter w, String tabs) throws IOException;
 }

@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Errors.CompilerExc;
 
 public class Decl {
@@ -15,4 +18,40 @@ public class Decl {
         int ah1 = this.type;
         lvars.computeAH1(ah1);
     }
+
+    public void generateCode(BufferedWriter w ,String tabs) throws IOException{
+        String type_str = "";
+        switch (type) {
+            case 200:
+                type_str = "int";
+                break;
+            case 300:
+                type_str = "boolean";
+                break;
+            case 400:
+                type_str = "real";
+                break;
+            default:
+                break;
+        }
+        w.write(type_str + " ");
+        lvars.generateCode(w,tabs);
+        w.write(" = ");
+        switch (type) {
+            case 200:
+                w.write("0");
+                break;
+            case 300:
+                w.write("false");
+                break;
+            case 400:
+                w.write("0.0f");
+                break;
+            default:
+                break;
+        }
+        w.write(";");
+
+    }
+
 }

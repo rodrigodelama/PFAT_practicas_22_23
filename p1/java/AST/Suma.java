@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.*;
 import Errors.*;
 
@@ -24,5 +27,14 @@ public class Suma implements Exp {
         } else {
             throw new TypExc("Error en suma");
         }
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write("("); 
+        e1.generateCode(w);
+        w.write(" + ");
+        e2.generateCode(w); 
+        w.write(")"); 
+        
     }
 }

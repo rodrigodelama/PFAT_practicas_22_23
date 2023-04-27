@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -20,7 +23,12 @@ public class Sent1 implements Sentencia {
         if((t1 == Typ.t_void) && (t2 == Typ.t_void)) {
             return Typ.t_void;
         } else {
-            throw new TypExc("Error en Sent");
+            throw new TypExc("Error en Sent1");
         } 
     }
+    public void generateCode(BufferedWriter w, String indent) throws IOException{
+        ss.generateCode(w, indent);
+        s.generateCode(w, indent);
+    }
+
 }

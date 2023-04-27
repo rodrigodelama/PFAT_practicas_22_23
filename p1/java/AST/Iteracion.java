@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -23,5 +26,8 @@ public class Iteracion implements Sentencia {
         } else {
             throw new TypExc("Error en Condicional");
         } 
+    }
+    public void generateCode(BufferedWriter w, String indent) throws IOException{
+        
     }
 }

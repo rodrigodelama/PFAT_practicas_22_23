@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -20,5 +23,12 @@ public class IntToReal implements Exp {
         } else {
             throw new TypExc("Error en IntToReal");
         }
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write("(float( ");
+        e1.generateCode(w);
+        w.write("))");//entre parentesis para cumplir la regla de produccion.
+        
     }
 }

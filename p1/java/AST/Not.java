@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -19,5 +22,13 @@ public class Not implements Exp {
         } else {
             throw new TypExc("Error en Op logica NOT");
         }
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        w.write("("); 
+        w.write("!");
+        e1.generateCode(w);
+        w.write(")"); 
+        
     }
 }

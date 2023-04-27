@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.*;
 import Errors.*;
 
@@ -26,4 +29,51 @@ public class Size {
         }
     }
     
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
+       //w.write  if((ancho+10) <= 0 || (alto+10) <= 0) {
+            //System.err.println("Error: ancho o alto negativo");
+            //return;
+        //}
+        w.write(indent+"if((");
+        exp1.generateCode(w);
+        w.write(") <= 0 || (");
+        exp2.generateCode(w);
+        w.write(") <= 0) {");
+        w.newLine();
+        w.write(indent+"    "+"System.err.println(\"Error: ancho o alto negativo\");");
+        w.newLine();
+        w.write(indent+"    "+"return;");
+        w.newLine();
+        w.write(indent+"}");
+        w.newLine();
+
+        // int array[][] = new int[ancho+10][alto+10];
+        
+        // // inicializar a 0
+        // for (int j=0; j < ancho+10; j++) {
+        //     for (int k=0; k < alto+10; k++) {
+        //         array[j][k] = 0;
+        //     }
+        // }
+        w.write(indent+"int array[][] = new int[");
+        exp1.generateCode(w);
+        w.write("][");
+        exp2.generateCode(w);
+        w.write("];");
+        w.newLine();
+        w.write(indent+"for(int j=0; j < ");
+        exp1.generateCode(w);
+        w.write("; j++) {");
+        w.newLine();
+        w.write(indent+"    "+"for(int k=0; k < ");
+        exp2.generateCode(w);
+        w.write("; k++) {");
+        w.newLine();
+        w.write(indent+"        "+"array[j][k] = 0;");
+        w.newLine();
+        w.write(indent+"    "+"}");
+        w.newLine();
+        w.write(indent+"}");
+        w.newLine();
+    }
 }

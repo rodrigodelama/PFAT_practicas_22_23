@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -21,4 +24,13 @@ public class Seno implements Exp {
             throw new TypExc("Error en Seno");
         }
     }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        //TODO: maybe import java.lang.Math;
+        w.write("Math.sin(");
+        e1.generateCode(w);
+        w.write(")");
+    }
+    
+    
 }

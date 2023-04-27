@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -25,5 +28,12 @@ public class Division implements Exp {
             return Typ.t_real;
         }
         throw new TypExc("Error en division");
+    }
+
+    public void generateCode(BufferedWriter w) throws IOException {
+        e1.generateCode(w);
+        w.write(" / ");
+        e2.generateCode(w); 
+        
     }
 }

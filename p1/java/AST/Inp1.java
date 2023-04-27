@@ -29,8 +29,7 @@ public class Inp1 implements Inp {
     }
 
     public void generateCode(BufferedWriter w, String indent) throws IOException {
-        //w.write(lv.identifier + " Integer.parseInt(args["+ 0 +"]);");
-        
+        lv.generateCodeInp(w, indent);
         w.newLine();
     }
 }
