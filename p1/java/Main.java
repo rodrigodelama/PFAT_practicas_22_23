@@ -38,17 +38,18 @@ public class Main {
     }
     //Generación de código
     if (!error) {
-      programa.computeInd(); //TODO 
+      programa.computeInd(); 
       programa.getArgsLength();
       try {
           String nombreFicheroJava= args[1] + ".java";//nombre del ejecutable 
           BufferedWriter w= new BufferedWriter(new FileWriter(nombreFicheroJava));
-          //TODO   w.write("package GeneratedCodeLib;");
+          w.write("import GeneratedCodeLib.*;");
           w.newLine(); 
+          w.newLine();
           w.write("public class " + args[1] + " {");
           w.newLine();
           w.newLine(); 
-          programa.generateCode(w, "  "); //
+          programa.generateCode(w, "  "); 
           w.newLine(); 
           w.write("}");
           w.newLine(); 

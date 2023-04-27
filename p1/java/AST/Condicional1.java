@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.Typ;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -23,5 +26,18 @@ public class Condicional1 implements Sentencia {
         } else {
             throw new TypExc("Error en Condicional");
         } 
+    }
+
+    public void generateCode(BufferedWriter w, String indent) throws IOException{
+        // if (i < ancho) {
+        // }
+        w.write(indent+"if (");
+        e.generateCode(w);
+        w.write(") {");
+        w.newLine();
+        s1.generateCode(w, indent+"    ");
+        w.newLine();
+        w.write(indent+"}");
+        w.newLine();
     }
 }

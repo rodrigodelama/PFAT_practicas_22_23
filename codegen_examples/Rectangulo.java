@@ -50,7 +50,7 @@ public class Rectangulo {
 
         
         int[] flatArray = Flatt_Array.flatten2DArray(array);
-        BMP_Gen.map2BMP(alto + 10, ancho + 10, flatArray, args[2]);
+        BMP_Gen.map2BMP(alto_size, ancho_size, flatArray, args[2]);
     }
 }
     

@@ -1,5 +1,8 @@
 package AST;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 import Compiler.SymbolTable;
 import Errors.CompilerExc;
 import Errors.TypExc;
@@ -24,5 +27,12 @@ public class Asignacion implements Sentencia {
         } else {
             throw new TypExc("Error en Assign");
         } 
+    }
+
+    public void generateCode(BufferedWriter w, String indent) throws IOException{
+        w.write(indent+id+" = ");
+        e.generateCode(w);
+        w.write(";");
+        w.newLine();
     }
 }

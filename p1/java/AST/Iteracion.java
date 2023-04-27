@@ -28,6 +28,18 @@ public class Iteracion implements Sentencia {
         } 
     }
     public void generateCode(BufferedWriter w, String indent) throws IOException{
-        
+        // while (i < ancho) {
+        //     i++;
+        // }
+        //int i = 0;
+        w.write(indent+"i = 0;");
+        w.write(indent+"while (");
+        e.generateCode(w);
+        w.write(") {");
+        w.newLine();
+        s.generateCode(w, indent+"    ");
+        w.newLine();
+        w.write(indent+"}");
+        w.newLine();
     }
 }

@@ -55,22 +55,12 @@ public class Prog {
         size.generateCode(w, indent+"   ");
         variables.generateCode(w, indent+"   ");
         sentence.generateCode(w, indent+"   ");
-
-
-
-
-
-
-
-        // argumento.generateCode(w);   
-        // w.newLine();
-        // vars.generateCode(w);
-        // w.newLine();
-        // sent.generateCode(w);
-        //BMP_Gen.map2BMP(alto + 10, ancho + 10, flatArray, args[args_length + 1]);
-        //TODO
-        w.write(indent + "BMP_Gen.map2BMP(");
-        w.write("");
+        w.newLine();
+   
+        w.write("int[] flatArray = Flatt_Array.flatten2DArray(array);");
+        w.newLine();
+        w.write("BMP_Gen.map2BMP(alto_size, ancho_size, flatArray, args[");
+        w.write(args_length+1 + "]);");
         w.newLine();
         w.write("  }");
         w.newLine();
