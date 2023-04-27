@@ -3,7 +3,7 @@ import GeneratedCodeLib.*;
 public class Rectangulo {
     
     public static void main(String[] args) {
-        if(args.length < 3) {
+        if(args.length != 3) {
             return;
         }
         //inp
@@ -11,15 +11,14 @@ public class Rectangulo {
         int alto = Integer.parseInt(args[1]);
 
         //if ancho o alto es negativo
-        if(ancho < 0 || alto < 0) {
+        if((ancho+10) <= 0 || (alto+10) <= 0) {
             System.err.println("Error: ancho o alto negativo");
             return;
         }
 
         // vars es variables locales del programa fuente
-
         int i = 0;
-        
+        System.out.println("ancho: " + ancho + " alto: " + alto);
         // size
         int array[][] = new int[ancho+10][alto+10];
         
@@ -32,22 +31,25 @@ public class Rectangulo {
 
         while (i < ancho) {
             //rellenar pixeles
-            array[i+5][(alto - 1)-(5)] = 2; // es 2 porque el 2 es negro
-            array[i+5][(alto - 1)-(alto+4)] = 2;
+            //plot(x,y,color) se debe traducir por array[x][(alto+10-1)-y]= color
+            array[i+5][(alto+10-1)-(5)] = 2; // es 2 porque el 2 es negro
+            array[i+5][(alto+10-1)-(alto+4)] = 2;
             i++;
         }
 
         i = 0;
     //i = alto - 1; 
         while (i < alto) {
-            array[5][(alto - 1)-(i+5)] = 2;// array[5][(alto - 1) - i - 5 ] = 2;
-            array[ancho+4][(alto - 1)-(i+5)] = 2;
+            //plot(x,y,color) se debe traducir por array[x][(alto+10-1)-y]= color
+            //alto +10 porque lo define size!!!
+            array[5][(alto+10-1)-(i+5)] = 4;// array[5][(alto - 1) - i - 5 ] = 2;  
+            array[ancho+4][(alto+10-1)-(i+5)] = 4; //y es i+5
             i++;
         }
 
+        
         int[] flatArray = Flatt_Array.flatten2DArray(array);
-
-        BMP_Gen.map2BMP(alto, ancho, flatArray, "Rectangulo");
+        BMP_Gen.map2BMP(alto + 10, ancho + 10, flatArray, args[2]);
     }
 }
     
