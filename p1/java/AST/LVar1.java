@@ -42,7 +42,7 @@ public class LVar1 implements LVar {
        
     }
     public void generateCodeInp(BufferedWriter w, String tabs) throws IOException{
-        w.write("int " + identifier + " = Integer.parseInt(args["+ ind +"]);");
+        w.write(tabs + "int " + identifier + " = Integer.parseInt(args["+ ind +"]);");
         w.newLine();
     }
 

@@ -41,7 +41,7 @@ public class Prog {
     }
 
 	public void generateCode(BufferedWriter w, String indent) throws IOException {
-        w.write(indent+"public static void main(String _args[]) {");
+        w.write(indent+"public static void main(String args[]) {");
         w.newLine();
         w.write(indent+"    "+"if(args.length != " + (args_length+2) + ") {");// +2 porque empieza en 0 y el nombre del archivo bmp
         w.newLine();
@@ -57,9 +57,9 @@ public class Prog {
         sentence.generateCode(w, indent+"   ");
         w.newLine();
    
-        w.write("int[] flatArray = Flatt_Array.flatten2DArray(array);");
+        w.write(indent+"int[] flatArray = Flatt_Array.flatten2DArray(array);");
         w.newLine();
-        w.write("BMP_Gen.map2BMP(alto_size, ancho_size, flatArray, args[");
+        w.write(indent+"BMP_Gen.map2BMP(alto_size, ancho_size, flatArray, args[");
         w.write(args_length+1 + "]);");
         w.newLine();
         w.write("  }");

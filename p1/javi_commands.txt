@@ -37,6 +37,8 @@ cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java
 javac -d ../class Errors/*.java
 javac -d ../class AST/*.java
 javac -d ../class Compiler/*.java
+javac -d ../class GeneratedCodeLib/*.java
+cp /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/java/GeneratedCodeLib/BMP_Gen.class /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class/GeneratedCodeLib
 cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/

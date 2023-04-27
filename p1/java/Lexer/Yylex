@@ -64,11 +64,11 @@ real    {return tok(sym.TIPO, 400); }
 true		{return tok(sym.CLOG, true); }
 false		{return tok(sym.CLOG, false); }
 white		{return tok(sym.COLOR, 0); }
-grey    {return tok(sym.COLOR, 2); }
-black   {return tok(sym.COLOR, 1); }
-red   {return tok(sym.COLOR, 4); }
-green   {return tok(sym.COLOR, 5); }
-blue    {return tok(sym.COLOR, 3); }
+grey    {return tok(sym.COLOR, 1); }
+black   {return tok(sym.COLOR, 2); }
+red   {return tok(sym.COLOR, 3); }
+green   {return tok(sym.COLOR, 4); }
+blue    {return tok(sym.COLOR, 5); }
 yellow    {return tok(sym.COLOR, 6); }
 orange    {return tok(sym.COLOR, 7); }
 pi    {return tok(sym.PI, 3.14159f); }

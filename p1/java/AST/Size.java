@@ -62,12 +62,12 @@ public class Size {
         w.write("];");
         w.newLine();
         //        int ancho_size = array.length; int alto_size = array[0].length;
-        w.write("int ancho_size = array.length;");
+        w.write(indent+"int ancho_size = array.length;");
         w.newLine();
-        w.write("int alto_size = array[0].length;");
+        w.write(indent+"int alto_size = array[0].length;");
+        w.newLine();
 
-
-        w.write(indent+"for(int j=0; j < anchosize; j++) { ");
+        w.write(indent+"for(int j=0; j < ancho_size; j++) { ");
         w.newLine();
         w.write(indent+"    "+"for(int k=0; k < alto_size; k++) { ");
         w.newLine();

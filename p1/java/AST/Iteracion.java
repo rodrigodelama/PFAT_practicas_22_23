@@ -33,6 +33,7 @@ public class Iteracion implements Sentencia {
         // }
         //int i = 0;
         w.write(indent+"i = 0;");
+        w.newLine();
         w.write(indent+"while (");
         e.generateCode(w);
         w.write(") {");

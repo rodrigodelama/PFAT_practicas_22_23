@@ -34,7 +34,7 @@ public class Decl {
             default:
                 break;
         }
-        w.write(type_str + " ");
+        w.write(tabs+type_str + " ");
         lvars.generateCode(w,tabs);
         w.write(" = ");
         switch (type) {
@@ -51,6 +51,7 @@ public class Decl {
                 break;
         }
         w.write(";");
+        w.newLine();
 
     }
 
