@@ -7,13 +7,14 @@ import Compiler.*;
 import Errors.*;
 
 public class Plot implements Sentencia {
-    public final Exp e1;
-    public final Exp e2;
-    
+    public final Exp e1; //x
+    public final Exp e2; //y
+    public final int color;
 
     public Plot(Exp e1, Exp e2, int color) {
         this.e1 = e1;
         this.e2 = e2;
+        this.color = color;
         
     }
 
@@ -29,7 +30,11 @@ public class Plot implements Sentencia {
         }
     }
     public void generateCode(BufferedWriter w, String indent) throws IOException{
-        
+        //array[i+5][(alto+10-1)-(5)] = 2; // es 2 porque el 2 es negro
+        w.write("array[");
+        e1.generateCode(w);
+        w.write("][");
+
     }
 
 }

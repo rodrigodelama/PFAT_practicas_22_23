@@ -21,10 +21,11 @@ public class Rectangulo {
         int i = 0;
         // size
         int array[][] = new int[ancho+10][alto+10];
-        
+        int ancho_size = array.length;
+        int alto_size = array[0].length;
         // inicializar a 0
-        for (int j=0; j < ancho+10; j++) {
-            for (int k=0; k < alto+10; k++) {
+        for (int j=0; j < ancho_size; j++) {
+            for (int k=0; k < alto_size; k++) {
                 array[j][k] = 0;
             }
         }
@@ -32,8 +33,8 @@ public class Rectangulo {
         while (i < ancho) {
             //rellenar pixeles
             //plot(x,y,color) se debe traducir por array[x][(alto+10-1)-y]= color
-            array[i+5][(alto+10-1)-(5)] = 2; // es 2 porque el 2 es negro
-            array[i+5][(alto+10-1)-(alto+4)] = 2;
+            array[i+5][(alto_size-1)-(5)] = 2; // es 2 porque el 2 es negro
+            array[i+5][(alto_size-1)-(alto+4)] = 2;
             i++;
         }
 
@@ -42,8 +43,8 @@ public class Rectangulo {
         while (i < alto) {
             //plot(x,y,color) se debe traducir por array[x][(alto+10-1)-y]= color
             //alto +10 porque lo define size!!!
-            array[5][(alto+10-1)-(i+5)] = 4;// array[5][(alto - 1) - i - 5 ] = 2;  
-            array[ancho+4][(alto+10-1)-(i+5)] = 4; //y es i+5
+            array[5][(alto_size-1)-(i+5)] = 2;// array[5][(alto - 1) - i - 5 ] = 2;  
+            array[ancho+4][(alto_size-1)-(i+5)] = 2; //y es i+5
             i++;
         }
 

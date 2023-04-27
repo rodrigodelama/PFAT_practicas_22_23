@@ -61,13 +61,15 @@ public class Size {
         exp2.generateCode(w);
         w.write("];");
         w.newLine();
-        w.write(indent+"for(int j=0; j < ");
-        exp1.generateCode(w);
-        w.write("; j++) {");
+        //        int ancho_size = array.length; int alto_size = array[0].length;
+        w.write("int ancho_size = array.length;");
         w.newLine();
-        w.write(indent+"    "+"for(int k=0; k < ");
-        exp2.generateCode(w);
-        w.write("; k++) {");
+        w.write("int alto_size = array[0].length;");
+
+
+        w.write(indent+"for(int j=0; j < anchosize; j++) { ");
+        w.newLine();
+        w.write(indent+"    "+"for(int k=0; k < alto_size; k++) { ");
         w.newLine();
         w.write(indent+"        "+"array[j][k] = 0;");
         w.newLine();
@@ -75,5 +77,7 @@ public class Size {
         w.newLine();
         w.write(indent+"}");
         w.newLine();
+    
+        
     }
 }
