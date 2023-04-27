@@ -38,7 +38,8 @@ public class Main {
     }
     //Generación de código
     if (!error) {
-      programa.computeInd(); //TODO para 
+      programa.computeInd(); //TODO 
+      programa.getArgsLength();
       try {
           String nombreFicheroJava= args[1] + ".java";//nombre del ejecutable 
           BufferedWriter w= new BufferedWriter(new FileWriter(nombreFicheroJava));

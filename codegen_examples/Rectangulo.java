@@ -18,7 +18,6 @@ public class Rectangulo {
 
         // vars es variables locales del programa fuente
         int i = 0;
-        System.out.println("ancho: " + ancho + " alto: " + alto);
         // size
         int array[][] = new int[ancho+10][alto+10];
         
