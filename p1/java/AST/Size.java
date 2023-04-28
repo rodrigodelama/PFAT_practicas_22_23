@@ -56,9 +56,9 @@ public class Size {
         //     }
         // }
         w.write(indent+"int array[][] = new int[");
-        exp1.generateCode(w);
-        w.write("][");
         exp2.generateCode(w);
+        w.write("][");
+        exp1.generateCode(w);
         w.write("];");
         w.newLine();
         //        int ancho_size = array.length; int alto_size = array[0].length;
