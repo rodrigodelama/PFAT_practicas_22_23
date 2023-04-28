@@ -26,7 +26,6 @@ public class Seno implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        //TODO: maybe import java.lang.Math;
         w.write("Math.sin(");
         e1.generateCode(w);
         w.write(")");

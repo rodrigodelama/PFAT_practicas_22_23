@@ -25,7 +25,6 @@ public class Coseno implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        //TODO: maybe import java.util.Math;
         w.write("Math.cos(");
         e1.generateCode(w);
         w.write(")");

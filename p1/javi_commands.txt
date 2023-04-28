@@ -54,8 +54,8 @@ cd /Users/javi/Documents/PFAT/PFAT_practicas_22_23/p1/class
 rm parser.java sym.java Yylex.java
 mv ../java/Main.java .
 javac -d . Main.java
-java Main ../ejemplos/Ejem1/
 mv Main.java ../java
+java Main ../ejemplos/Ejem1/
 
 
 //Ejem

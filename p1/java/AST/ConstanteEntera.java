@@ -17,6 +17,6 @@ public class ConstanteEntera implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write(""+n);//TODO posible error de tipo de dato (si nos da problemas, convertir a string)
+        w.write(""+n);
     }
 }

@@ -31,9 +31,9 @@ public class Plot implements Sentencia {
     }
     public void generateCode(BufferedWriter w, String indent) throws IOException{
         //array[i+5][(alto_size-1)-(5)] = 2; // es 2 porque el 2 es negro
-        w.write(indent+"array[");
+        w.write(indent+"array[(int)");
         e1.generateCode(w);
-        w.write("][(alto_size-1)-(");
+        w.write("][(int)(alto_size-1)-(");
         e2.generateCode(w);
         w.write(")] =");
         w.write(color+"" + ";");

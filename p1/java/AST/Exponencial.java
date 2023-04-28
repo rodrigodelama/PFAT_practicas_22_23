@@ -26,7 +26,6 @@ public class Exponencial implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        //TODO: maybe import java.util.Math;
         w.write("Math.exp(");
         e1.generateCode(w);
         w.write(")");
