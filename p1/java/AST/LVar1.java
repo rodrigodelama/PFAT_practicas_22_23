@@ -38,8 +38,20 @@ public class LVar1 implements LVar {
         return args_length;
     }
     public void generateCode(BufferedWriter w, String tabs) throws IOException{
-        w.write(identifier);
-       
+        w.write(identifier+" = ");
+        switch (ah1) {
+            case 200:
+                w.write("0");
+                break;
+            case 300:
+                w.write("false");
+                break;
+            case 400:
+                w.write("0.0f");
+                break;
+            default:
+                break;
+        }
     }
     public void generateCodeInp(BufferedWriter w, String tabs) throws IOException{
         w.write(tabs + "int " + identifier + " = Integer.parseInt(args["+ ind +"]);");

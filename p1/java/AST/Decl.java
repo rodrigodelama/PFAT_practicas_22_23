@@ -36,20 +36,6 @@ public class Decl {
         }
         w.write(tabs+type_str + " ");
         lvars.generateCode(w,tabs);
-        w.write(" = ");
-        switch (type) {
-            case 200:
-                w.write("0");
-                break;
-            case 300:
-                w.write("false");
-                break;
-            case 400:
-                w.write("0.0f");
-                break;
-            default:
-                break;
-        }
         w.write(";");
         w.newLine();
 
