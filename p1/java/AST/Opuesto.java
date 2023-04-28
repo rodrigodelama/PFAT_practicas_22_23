@@ -27,8 +27,9 @@ public class Opuesto implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write("-");
+        w.write("(-");
         e.generateCode(w);
+        w.write(")");
         
     }
 }

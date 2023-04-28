@@ -30,11 +30,9 @@ public class Menos implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write("(");
         e1.generateCode(w);
         w.write(" - ");
         e2.generateCode(w);
-        w.write(")"); 
-        
+                
     }
 }

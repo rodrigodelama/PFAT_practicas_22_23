@@ -26,7 +26,7 @@ public class RealToInt implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write("((int) ");
+        w.write("(int)( ");
         e1.generateCode(w);
         w.write(")");//entre parentesis para cumplir la regla de produccion.
         

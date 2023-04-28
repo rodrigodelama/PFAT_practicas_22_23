@@ -32,6 +32,7 @@ public class Iteracion implements Sentencia {
         //     i++;
         // }
         //int i = 0;
+        //TODO, FORCING i=0, but it might be j or another letter
         w.write(indent+"i = 0;");
         w.newLine();
         w.write(indent+"while (");
