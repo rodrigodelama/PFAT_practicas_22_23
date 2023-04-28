@@ -29,7 +29,7 @@ public class Decl {
                 type_str = "boolean";
                 break;
             case 400:
-                type_str = "real";
+                type_str = "float";
                 break;
             default:
                 break;

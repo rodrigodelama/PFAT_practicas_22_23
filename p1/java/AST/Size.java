@@ -55,9 +55,9 @@ public class Size {
         //         array[j][k] = 0;
         //     }
         // }
-        w.write(indent+"int array[][] = new int[");
+        w.write(indent+"int array[][] = new int[(int)");
         exp2.generateCode(w);
-        w.write("][");
+        w.write("][(int)");
         exp1.generateCode(w);
         w.write("];");
         w.newLine();
