@@ -34,6 +34,5 @@ public class Division implements Exp {
         e1.generateCode(w);
         w.write(" / ");
         e2.generateCode(w); 
-        
     }
 }

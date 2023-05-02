@@ -18,10 +18,9 @@ public class VDef2 implements VDef {
         d.computeAH1();
         v.computeAH1();
     }
-    public void generateCode(BufferedWriter w ,String tabs) throws IOException{
+
+    public void generateCode(BufferedWriter w ,String tabs) throws IOException {
         d.generateCode(w,tabs);
         v.generateCode(w,tabs);
-
     }
-
 }

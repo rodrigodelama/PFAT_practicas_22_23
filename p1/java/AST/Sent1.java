@@ -15,6 +15,7 @@ public class Sent1 implements Sentencia {
         this.ss = ss;
         this.s = s;
     }
+
     public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = ss.computeStTyp();
@@ -26,9 +27,9 @@ public class Sent1 implements Sentencia {
             throw new TypExc("Error en Sent1");
         } 
     }
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
+
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
         ss.generateCode(w, indent);
         s.generateCode(w, indent);
     }
-
 }

@@ -34,6 +34,5 @@ public class MenorQue implements Exp {
         w.write(" < ");
         e2.generateCode(w); 
         w.write(")"); 
-        
     }
 }

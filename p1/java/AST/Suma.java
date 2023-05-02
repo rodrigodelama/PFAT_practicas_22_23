@@ -34,6 +34,5 @@ public class Suma implements Exp {
         w.write(" + ");
 
         e2.generateCode(w); 
-        
     }
 }

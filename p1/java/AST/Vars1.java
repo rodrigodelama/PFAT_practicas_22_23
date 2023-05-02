@@ -16,8 +16,7 @@ public class Vars1 implements Vars {
         vd.computeAH1();
     }
 
-    public void generateCode(BufferedWriter w, String tabs) throws IOException{
+    public void generateCode(BufferedWriter w, String tabs) throws IOException {
         vd.generateCode(w, tabs);
     }
-
 }

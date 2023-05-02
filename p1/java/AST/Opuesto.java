@@ -30,6 +30,5 @@ public class Opuesto implements Exp {
         w.write("(-");
         e.generateCode(w);
         w.write(")");
-        
     }
 }

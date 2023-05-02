@@ -29,15 +29,15 @@ public class Plot implements Sentencia {
             throw new TypExc("Error en Plot");
         }
     }
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
-        //array[i+5][(alto_size-1)-(5)] = 2; // es 2 porque el 2 es negro
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
+        //array[i+5][(alto_size-1)-(5)] = 2; //igual a 2 porque el 2 es negro
+
         w.write(indent+"array[");
         e1.generateCode(w);
         w.write("][(int)((alto_size-1)-(");
         e2.generateCode(w);
         w.write("))] =");
-        w.write(color+"" + ";");
+        w.write(color + "" + ";");
         w.newLine();
     }
-
 }

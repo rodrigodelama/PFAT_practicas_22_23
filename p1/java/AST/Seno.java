@@ -30,6 +30,4 @@ public class Seno implements Exp {
         e1.generateCode(w);
         w.write(")");
     }
-    
-    
 }

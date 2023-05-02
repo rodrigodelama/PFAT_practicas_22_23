@@ -28,7 +28,6 @@ public class Not implements Exp {
         w.write("("); 
         w.write("!");
         e1.generateCode(w);
-        w.write(")"); 
-        
+        w.write(")");
     }
 }

@@ -43,7 +43,7 @@ public class Prog {
 	public void generateCode(BufferedWriter w, String indent) throws IOException {
         w.write(indent+"public static void main(String args[]) {");
         w.newLine();
-        w.write(indent+"    "+"if(args.length != " + (args_length+2) + ") {");// +2 porque empieza en 0 y el nombre del archivo bmp
+        w.write(indent+"    "+"if(args.length != " + (args_length+2) + ") {"); // +2 porque empieza en 0 y el nombre del archivo bmp
         w.newLine();
         w.write(indent+"        "+"System.err.println(\"Error: invalid number of arguments\");");
         w.newLine();
@@ -56,7 +56,7 @@ public class Prog {
         variables.generateCode(w, indent+"   ");
         sentence.generateCode(w, indent+"   ");
         w.newLine();
-   
+
         w.write(indent+"int[] flatArray = Flatt_Array.flatten2DArray(array);");
         w.newLine();
         w.write(indent+"BMP_Gen.map2BMP(alto_size, ancho_size, flatArray, args[");

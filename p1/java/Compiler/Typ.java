@@ -19,4 +19,3 @@ public class Typ {
         return "void";
     }
 }
-

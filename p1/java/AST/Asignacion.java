@@ -29,8 +29,8 @@ public class Asignacion implements Sentencia {
         } 
     }
 
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
-        w.write(indent+id+" = ");
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
+        w.write(indent + id + " = ");
         e.generateCode(w);
         w.write(";");
         w.newLine();

@@ -10,9 +10,11 @@ public class Variable implements Exp {
     public Variable(String ident) {
         this.ident = ident;
     }
+
     public int computeTyp() throws CompilerExc {
         return SymbolTable.getType(this.ident); //si no lanza la excepcion, entonces devuelve el numero del tipo.
     }
+
     public void generateCode(BufferedWriter w) throws IOException{
         w.write(ident);
     }

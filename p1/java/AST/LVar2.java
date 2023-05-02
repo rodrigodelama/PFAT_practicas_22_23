@@ -42,8 +42,9 @@ public class LVar2 implements LVar {
         args_length = lv.getArgsLength();
         return args_length;
     }
-    public void generateCode(BufferedWriter w, String tabs) throws IOException{
-        w.write(identifier+" = ");
+
+    public void generateCode(BufferedWriter w, String tabs) throws IOException {
+        w.write(identifier + " = ");
         switch (ah1) {
             case 200:
                 w.write("0,");
@@ -58,9 +59,9 @@ public class LVar2 implements LVar {
                 break;
         }
         lv.generateCode(w, tabs);
-
     }
-    public void generateCodeInp(BufferedWriter w, String tabs) throws IOException{
+
+    public void generateCodeInp(BufferedWriter w, String tabs) throws IOException {
         w.write(tabs+"int " + identifier + " = Integer.parseInt(args["+ ind +"]);");
         w.newLine();
         lv.generateCodeInp(w, tabs);

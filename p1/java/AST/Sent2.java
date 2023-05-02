@@ -15,8 +15,8 @@ public class Sent2 implements Sentencia {
     public int computeStTyp() throws CompilerExc {
         return ss.computeStTyp();
     }
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
+
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
         ss.generateCode(w, indent);
     }
-
 }

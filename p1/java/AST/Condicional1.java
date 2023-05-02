@@ -28,9 +28,10 @@ public class Condicional1 implements Sentencia {
         } 
     }
 
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
         // if (i < ancho) {
         // }
+
         w.write(indent+"if (");
         e.generateCode(w);
         w.write(") {");

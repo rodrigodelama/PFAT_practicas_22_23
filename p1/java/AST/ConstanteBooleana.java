@@ -17,6 +17,6 @@ public class ConstanteBooleana implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write(""+c);
+        w.write("" + c);
     }
 }

@@ -32,13 +32,14 @@ public class Iteracion implements Sentencia {
         //     i++;
         // }
         //int i = 0;
+
         w.write(indent+"while (");
         e.generateCode(w);
         w.write(") {");
         w.newLine();
-        s.generateCode(w, indent+"    ");
+        s.generateCode(w, indent + "    ");
         w.newLine();
-        w.write(indent+"}");
+        w.write(indent + "}");
         w.newLine();
     }
 }

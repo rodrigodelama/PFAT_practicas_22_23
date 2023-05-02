@@ -17,6 +17,7 @@ public class Size {
     
     //<Size>.st_typ= if (<Exp>.typ== int) 
     //and (<Exp>1.typ== int) then void else typ_err
+
     public int computeStTyp() throws CompilerExc {
         int t1, t2;
         t1 = exp1.computeTyp();
@@ -28,9 +29,9 @@ public class Size {
             throw new TypExc("Error en size");
         }
     }
-    
+
     public void generateCode(BufferedWriter w, String indent) throws IOException {
-       //w.write  if((ancho+10) <= 0 || (alto+10) <= 0) {
+        //w.write  if((ancho+10) <= 0 || (alto+10) <= 0) {
             //System.err.println("Error: ancho o alto negativo");
             //return;
         //}
@@ -55,6 +56,7 @@ public class Size {
         //         array[j][k] = 0;
         //     }
         // }
+
         w.write(indent+"int array[][] = new int[");
         exp2.generateCode(w);
         w.write("][");
@@ -77,7 +79,5 @@ public class Size {
         w.newLine();
         w.write(indent+"}");
         w.newLine();
-    
-        
     }
 }

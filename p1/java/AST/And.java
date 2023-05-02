@@ -24,6 +24,7 @@ public class And implements Exp {
         if((t1 == Typ.t_bool) && (t2 == Typ.t_bool)) {
             return Typ.t_bool;
         } else {
+
             throw new TypExc("Error en Op logica AND");
         }
     }

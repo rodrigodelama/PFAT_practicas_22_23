@@ -30,9 +30,6 @@ public class Multiplicacion implements Exp {
     public void generateCode(BufferedWriter w) throws IOException {
         e1.generateCode(w);
         w.write(" * ");
-        e2.generateCode(w);  
-        
+        e2.generateCode(w);
     }
-
-    
 }

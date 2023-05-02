@@ -21,6 +21,5 @@ public class Parentesis implements Exp {
         w.write("(");
         e.generateCode(w);
         w.write(")");
-
     }
 }

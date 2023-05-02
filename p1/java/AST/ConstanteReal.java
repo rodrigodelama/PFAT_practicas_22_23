@@ -17,6 +17,6 @@ public class ConstanteReal implements Exp {
     }
 
     public void generateCode(BufferedWriter w) throws IOException {
-        w.write(""+n);
+        w.write("" + n);
     }
 }

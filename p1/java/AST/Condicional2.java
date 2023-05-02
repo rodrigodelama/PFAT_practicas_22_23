@@ -31,9 +31,9 @@ public class Condicional2 implements Sentencia {
         }
     }
 
-    public void generateCode(BufferedWriter w, String indent) throws IOException{
+    public void generateCode(BufferedWriter w, String indent) throws IOException {
         // if (i < ancho) {
-        // }else{
+        // } else {
 
         w.write(indent+"if (");
         e.generateCode(w);

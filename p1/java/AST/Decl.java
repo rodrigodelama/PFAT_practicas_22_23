@@ -19,7 +19,7 @@ public class Decl {
         lvars.computeAH1(ah1);
     }
 
-    public void generateCode(BufferedWriter w ,String tabs) throws IOException{
+    public void generateCode(BufferedWriter w, String tabs) throws IOException {
         String type_str = "";
         switch (type) {
             case 200:
@@ -34,11 +34,10 @@ public class Decl {
             default:
                 break;
         }
-        w.write(tabs+type_str + " ");
-        lvars.generateCode(w,tabs);
+        w.write(tabs + type_str + " ");
+        lvars.generateCode(w, tabs);
         w.write(";");
         w.newLine();
-
     }
 
 }
