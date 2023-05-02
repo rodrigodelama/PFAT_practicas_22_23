@@ -20,7 +20,7 @@ public class Inp1 implements Inp {
     }
 
     public void computeInd() throws CompilerExc {
-       lv.computeInd(0);
+        lv.computeInd(0);
     }
 
     public int getArgsLength() {
