@@ -1,16 +1,51 @@
 //Ejem
-java Main ..\ejemplos\Ejem1\Rectangulo.prg
-java Main ..\ejemplos\Ejem2\Diagonal1.prg
-java Main ..\ejemplos\Ejem3\Diagonal2.prg
-java Main ..\ejemplos\Ejem4\Triangulo1.prg
-java Main ..\ejemplos\Ejem5\Circulo.prg
-java Main ..\ejemplos\Ejem6\Circulo.prg
-java Main ..\ejemplos\Ejem7\Triangulo2.prg
-java Main ..\ejemplos\Ejem8\Triangulo3.prg
-java Main ..\ejemplos\Ejem9\Mixto.prg
-java Main ..\ejemplos\Ejem10\Seno.prg
-java Main ..\ejemplos\Ejem11\Zigzag.prg
-java Main ..\ejemplos\Ejem12\Exponencial.prg
+java Main ../ejemplos/Ejem1/Rectangulo.prg Rectangulo
+javac Rectangulo.java
+java Rectangulo 500 400 Rectangulo.bmp
+
+java Main ../ejemplos/Ejem2/Diagonal1.prg Diagonal1
+javac Diagonal1.java
+java Diagonal1 500 Diagonal1.bmp
+
+java Main ../ejemplos/Ejem3/Diagonal2.prg Diagonal2
+javac Diagonal2.java
+java Diagonal2 500 Diagonal2.bmp
+
+java Main ../ejemplos/Ejem4/Triangulo1.prg Triangulo1
+javac Triangulo1.java
+java Triangulo1 500 400 300 Triangulo1.bmp
+
+java Main ../ejemplos/Ejem5/Circulo.prg Circulo
+javac Circulo.java
+java Circulo Circulo.bmp
+
+java Main ../ejemplos/Ejem6/Circulo.prg Circulo
+javac Circulo.java
+java Circulo Circulo2.bmp
+
+java Main ../ejemplos/Ejem7/Triangulo2.prg Triangulo2
+javac Triangulo2.java
+java Triangulo2 500 400 300 Triangulo2.bmp
+
+java Main ../ejemplos/Ejem8/Triangulo3.prg Triangulo3
+javac Triangulo3.java
+java Triangulo3 500 400 300 Triangulo3.bmp
+
+java Main ../ejemplos/Ejem9/Mixto.prg Mixto
+javac Mixto.java
+java Mixto Mixto.bmp
+
+java Main ../ejemplos/Ejem10/Seno.prg Seno
+javac Seno.java
+java Seno 400 7 Seno.bmp
+
+java Main ../ejemplos/Ejem11/Zigzag.prg Zigzag
+javac Zigzag.java
+java Zigzag 500 Zigzag.bmp
+
+java Main ../ejemplos/Ejem12/Exponencial.prg Exponencial
+javac Exponencial.java
+java Exponencial 500 6 Exponencial.bmp
 
 //ErrLex
 java Main ..\ejemplos\ErrLex\ErrLex.prg
