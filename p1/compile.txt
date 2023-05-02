@@ -2,10 +2,10 @@
 
 cd p1/java
 javac -d ../class Errors/*.java
-javac -d ../class AST/*.java
-javac -d ../class Compiler/*.java
 javac -d ../class GeneratedCodeLib/*.java
 cp ../java/GeneratedCodeLib/BMP_Gen.class ../class/GeneratedCodeLib/
+javac -d ../class Compiler/*.java
+javac -d ../class AST/*.java
 cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/
