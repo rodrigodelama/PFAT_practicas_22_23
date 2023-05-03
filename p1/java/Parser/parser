@@ -92,6 +92,7 @@ Exp ::= IDENT:s {:RESULT=new Variable(s); :}
 
       //Expresiones de tipo real
       | PI:p {:RESULT=new ConstanteReal(3.14159f); :}
+      | PI2:p {:RESULT=new ConstanteReal(9.8696f); :}
       | CREAL:n {:RESULT=new ConstanteReal(n.floatValue()); :}
       | INT2REAL PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
       | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 

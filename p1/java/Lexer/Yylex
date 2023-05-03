@@ -54,7 +54,8 @@ Real2Int    {return tok(sym.REAL2INT, null); }
 vars    {return tok(sym.VARS, null); } 
 seno    {return tok(sym.SENO, null); } 
 coseno    {return tok(sym.COSENO, null); } 
-exp    {return tok(sym.EXPONENCIAL, null); } 
+exp    {return tok(sym.EXPONENCIAL, null); }
+// color {return tok(sym.COLOR, 0); }
 
 int		{return tok(sym.TIPO, 200); }        
 bool		{return tok(sym.TIPO, 300); }
@@ -72,6 +73,7 @@ blue    {return tok(sym.COLOR, 5); }
 yellow    {return tok(sym.COLOR, 6); }
 orange    {return tok(sym.COLOR, 7); }
 pi    {return tok(sym.PI, 3.14159f); }
+pi2   {return tok(sym.PI2, 9.8696f); }
 
 
 {Digito}*"."{Digito}+|{Digito}+"."|({Digito}*"."{Digito}+|{Digito}+".")(e|E)(("+"|"-")?){Digito}+|{Digito}+(e|E)(("+"|"-")?){Digito}+ {return tok(sym.CREAL, Float.parseFloat(yytext())); }	         
