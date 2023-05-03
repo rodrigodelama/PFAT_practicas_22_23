@@ -47,6 +47,18 @@ java Main ../ejemplos/Ejem12/Exponencial.prg Exponencial
 javac Exponencial.java
 java Exponencial 500 6 Exponencial.bmp
 
+java Main ../ejemplosNuevos/EjemN1/Rectangulo.prg Rectangulo
+javac Rectangulo.java
+java Rectangulo 500 400 prueba.bmp
+
+java Main ../ejemplosNuevos/EjemN2/Triangulo2.prg Triangulo2
+javac Triangulo2.java
+java Triangulo2 500 400 300 prueba2.bmp
+
+java Main ../ejemplosNuevos/EjemN3/Circulo.prg Circulo
+javac Circulo.java
+java Circulo prueba.bmp
+
 //ErrLex
 java Main ..\ejemplos\ErrLex\ErrLex.prg
 
@@ -61,6 +73,8 @@ java Main ..\ejemplos\ErrSem7\ErrSem7.prg
 java Main ..\ejemplos\ErrSem8\ErrSem8.prg
 java Main ..\ejemplos\ErrSem9\ErrSem9.prg
 java Main ..\ejemplos\ErrSem10\ErrSem10.prg
+
+java Main ..\ejemplosNuevos\ErrSemN1\errSemN1.prg
 
 //ErrSint
 java Main ..\ejemplos\ErrSint1\ErrSint1.prg
