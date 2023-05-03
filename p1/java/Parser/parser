@@ -74,7 +74,7 @@ Cond ::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp
 Repet ::= WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
 
 
-Plot ::= PLOT PAREN COLOR:c1 COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(e1, e2, c1); :} ;
+Plot ::= PLOT PAREN IDENT:i COLOR:c1 COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(i, e1, e2, c1); :} ;
 
 
       //Expresiones sin tipo definido
