@@ -22,7 +22,7 @@ MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
 
 terminal Integer TIPO, CENT, COLOR;
-terminal Float CREAL, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
+terminal Float CREAL, PI, PI2; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG;
 terminal String IDENT;
 non terminal Prog Prog;
