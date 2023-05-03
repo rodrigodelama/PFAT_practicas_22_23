@@ -13,16 +13,18 @@ public class Asignacion implements Sentencia {
     public final Exp e;
 
     public Asignacion(String id, Exp e) {
-        this.id = id;
-        this.e = e;
+        this.id = id; //ident
+        this.e = e; //exp
     }
 
     public int computeStTyp() throws CompilerExc {
         int t1, t2;
-        t1 = SymbolTable.getType(id);
-        t2 = e.computeTyp();
+        t1 = SymbolTable.getType(id); //ident
+        t2 = e.computeTyp(); //exp
         
         if(t1 == t2) {
+            return Typ.t_void;
+        } else if (t1 == Typ.t_real && t2 == Typ.t_int) {
             return Typ.t_void;
         } else {
             throw new TypExc("Error en Assign");
