@@ -49,15 +49,15 @@ java Exponencial 500 6 Exponencial.bmp
 
 java Main ../ejemplosNuevos/EjemN1/Rectangulo.prg Rectangulo
 javac Rectangulo.java
-java Rectangulo 500 400 prueba.bmp
+java Rectangulo 500 400 prueba_nuevoRectangulo.bmp
 
 java Main ../ejemplosNuevos/EjemN2/Triangulo2.prg Triangulo2
 javac Triangulo2.java
-java Triangulo2 500 400 300 prueba2.bmp
+java Triangulo2 500 400 300 prueba_nuevoTriangulo.bmp
 
 java Main ../ejemplosNuevos/EjemN3/Circulo.prg Circulo
 javac Circulo.java
-java Circulo prueba.bmp
+java Circulo prueba_nuevoCirculo.bmp
 
 //ErrLex
 java Main ..\ejemplos\ErrLex\ErrLex.prg
