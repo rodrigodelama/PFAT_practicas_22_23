@@ -55,7 +55,6 @@ vars    {return tok(sym.VARS, null); }
 seno    {return tok(sym.SENO, null); } 
 coseno    {return tok(sym.COSENO, null); } 
 exp    {return tok(sym.EXPONENCIAL, null); }
-// color {return tok(sym.COLOR, 0); }
 
 int		{return tok(sym.TIPO, 200); }        
 bool		{return tok(sym.TIPO, 300); }
