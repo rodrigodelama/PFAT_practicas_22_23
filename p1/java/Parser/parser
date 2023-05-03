@@ -20,7 +20,7 @@ terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
 INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
 MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
-
+//stage 1 in line 25
 terminal Integer TIPO, CENT, COLOR;
 terminal Float CREAL, PI, PI2; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG;
@@ -92,7 +92,7 @@ Exp ::= IDENT:s {:RESULT=new Variable(s); :}
 
       //Expresiones de tipo real
       | PI:p {:RESULT=new ConstanteReal(3.14159f); :}
-      | PI2:p {:RESULT=new ConstanteReal(9.8696f); :}
+      | PI2:p {:RESULT=new ConstanteReal(9.8696f); :} //stage 1
       | CREAL:n {:RESULT=new ConstanteReal(n.floatValue()); :}
       | INT2REAL PAREN Exp:e1 TESIS {:RESULT=new IntToReal(e1); :}
       | SENO PAREN Exp:e1 TESIS {:RESULT=new Seno(e1); :} 

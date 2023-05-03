@@ -24,8 +24,8 @@ public class Asignacion implements Sentencia {
         
         if(t1 == t2) {
             return Typ.t_void;
-        } else if (t1 == Typ.t_real && t2 == Typ.t_int) {
-            return Typ.t_void;
+        } else if (t1 == Typ.t_real && t2 == Typ.t_int) { //stage 2
+            return Typ.t_void; //stage 2
         } else {
             throw new TypExc("Error en Assign");
         } 

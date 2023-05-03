@@ -7,6 +7,8 @@ import Parser.sym;
 %{
 private java_cup.runtime.Symbol tok(int k, Object value) {
     //System.out.println("Token: " + k);  //para depurar, comentar antes de entregar
+    
+    //stage 1 modified in line 76
   return new java_cup.runtime.Symbol(k, yyline, 0, value); 
 }
 %}
