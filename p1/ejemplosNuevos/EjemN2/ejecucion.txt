@@ -1,0 +1,5 @@
+[luis@armonica Ejem10]$ java Main Seno.prg Seno
+Codigo generado en fichero Seno.java
+[luis@armonica Ejem10]$ javac *.java
+[luis@armonica Ejem10]$ java Seno 600 8 prueba8.bmp
+
