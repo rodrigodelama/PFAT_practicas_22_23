@@ -75,7 +75,7 @@ public class Size2 implements Size{
         w.newLine();
         w.write(indent+"    "+"for(int k=0; k < alto_size; k++) { ");
         w.newLine();
-        w.write(indent+"        "+"array[j][k] = 0;");
+        w.write(indent+"        "+"array[j][k] = " + color + ";");
         w.newLine();
         w.write(indent+"    "+"}");
         w.newLine();
