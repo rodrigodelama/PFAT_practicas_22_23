@@ -61,7 +61,7 @@ Decl ::= TIPO:t LVar:l {:RESULT=new Decl(t.intValue(), l); :} ;
 
 LVar ::= IDENT:i {:RESULT=new LVar1(i); :} | IDENT:i COMA LVar:l {:RESULT=new LVar2(i, l); :} ;
 
-Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} ;
+Size ::= SIZE PAREN Exp:exp1 COMA Exp:exp2 TESIS PC {:RESULT=new Size(exp1, exp2); :} | SIZE PAREN Exp:exp1 COMA Exp:exp2 COMA COLOR:c1 TESIS PC {:RESULT=new Size2(exp1, exp2, c1); :} ;
 
 SentSimp ::= Asign:as {:RESULT=new SentSimp1 (as); :} | Cond:c {:RESULT=new SentSimp1 (c); :} | Repet:r {:RESULT=new SentSimp1 (r); :} | Plot:p {:RESULT=new SentSimp2 (p); :} ;
 //AGRUPADO en interfaz de Sentencia 

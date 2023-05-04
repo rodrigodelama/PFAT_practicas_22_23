@@ -143,3 +143,8 @@ javac Zigzag.java
 
 java Main ../ejemplos/Ejem12/Exponencial.prg Exponencial
 javac Exponencial.java
+
+
+java Main ../ejemplosNuevos/EjemN3/Circulo.prg Circulo
+javac Circulo.java
+java Circulo prueba.bmp
