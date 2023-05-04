@@ -143,3 +143,16 @@ javac Zigzag.java
 
 java Main ../ejemplos/Ejem12/Exponencial.prg Exponencial
 javac Exponencial.java
+
+//Ejemplos nuevos:
+java Main ../ejemplosNuevos/EjemN1/Triangulo1.prg Triangulo1
+javac Triangulo1.java
+java Triangulo1 500 400 300 Triangulo1.bmp
+
+java Main ../ejemplosNuevos/ErrSemN1/errSemN1.prg errSemN1
+javac errSemN1.java
+java errSemN1 500 5 errSemN1.bmp
+
+java Main ../ejemplosNuevos/EjemN2/Seno.prg Seno
+javac Seno.java
+java Seno 600 8 Seno.bmp
