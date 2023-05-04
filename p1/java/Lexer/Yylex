@@ -46,6 +46,7 @@ plot    {return tok(sym.PLOT, null); }
 do    {return tok(sym.DO, null); } 
 not    {return tok(sym.NOT, null); } 
 and		{return tok(sym.AND, null); }
+nand {return tok(sym.NAND, null); }//Linea NAND.
 or    {return tok(sym.OR, null); } 
 size    {return tok(sym.SIZE, null); } 
 PF2023    {return tok(sym.PROG, null); } 
