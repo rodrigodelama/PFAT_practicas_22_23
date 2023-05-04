@@ -2,22 +2,29 @@
 
 cd p1/java
 javac -d ../class Errors/*.java
+javac -d ../class AST/*.java
+javac -d ../class Compiler/*.java
 javac -d ../class GeneratedCodeLib/*.java
 cp ../java/GeneratedCodeLib/BMP_Gen.class ../class/GeneratedCodeLib/
-javac -d ../class Compiler/*.java
-javac -d ../class AST/*.java
 cd Parser
 java -jar ../../../class/CUP/java-cup-11b.jar parser
 mv *.java ../../class/
 cd ../../class/
 javac -d . *.java
-rm parser.java
-rm sym.java
 cd ../java/Lexer/
 java JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
+cd ../p1/class
+rm parser.java sym.java Yylex.java
+mv ../java/Main.java .
+javac -d . Main.java
+mv Main.java ../java
+
+
+rm parser.java
+rm sym.java
 rm Yylex.java
 cp ../java/Main.java ../class/Main.java
 javac -d . Main.java
