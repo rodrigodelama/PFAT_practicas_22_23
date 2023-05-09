@@ -1,0 +1,51 @@
+<!ELEMENT peliculas (pelicula+)>
+<!ELEMENT pelicula (titulo, director, anio, duracion, protagonistas, generos, nacionalidades)>
+<!ATTLIST pelicula indice CDATA #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT director (#PCDATA)>
+
+<!ELEMENT anio (#PCDATA)>
+
+<!ELEMENT duracion (#PCDATA)>
+
+<!ELEMENT protagonistas (actor+)>
+
+<!ELEMENT actor (#PCDATA)>
+<!ATTLIST actor nombre CDATA #REQUIRED>
+
+<!ELEMENT generos (genero+)>
+<!ELEMENT genero (#PCDATA)>
+
+<!ELEMENT nacionalidades (nacionalidad+)>
+<!ELEMENT nacionalidad (#PCDATA)>
+
+
+<!--
+    NOTES:
+    <!ATTLIST nombre_elemento atributo tipo_valor_atributo valor_por_defecto>
+    <!ATTLIST nombreElemento nombreAtributo1 tipoAtributo1 valorInicialAtributo1>
+    <!ATTLIST nombreElemento nombreAtributo2 tipoAtributo2 valorInicialAtributo2>
+
+    CLASS CODE:
+    <!ELEMENT TestSpec ((Test | GrupoTest)+)>
+    <!ATTLIST TestSpec ext CDATA #REQUIRED>
+
+    <!ELEMENT GrupoTest (EMPTY)>
+    <!ATTLIST GrupoTest tipo (lex|sint|sem) #REQUIRED num CDATA #REQUIRED>
+
+    <!ELEMENT Test (Comentario?, Ejecucion*)>
+    <!ATTLIST Test tipo CDATA #IMPLIED privado (si|no) #IMPLIED id CDATA #REQUIRED genClass CDATA #IMPLIED>
+
+    <!ELEMENT Ejecucion (Argumento*, Resultado*)>
+
+    <!ELEMENT Argumento (#PCDATA)>
+
+    <!ELEMENT Resultado (#PCDATA)>
+
+    <!ELEMENT Comentario (ANY)>
+
+    <!ATTLIST Comentario pt CDATA #IMPLIED>
+
+-->

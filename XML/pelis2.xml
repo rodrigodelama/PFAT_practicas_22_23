@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE peliculas SYSTEM "peli.dtd">
 <peliculas>
-    <pelicula indice="1">
-        <titulo>La La Land</titulo>
-        <director>Damien Chazelle</director>
-        <anio>2016</anio>
-        <duracion>128</duracion>
+    <pelicula>
+        <Titulo><![CDATA[La La Land]]></Titulo>
+        <Director><![CDATA[SCARPA GONZALEZ]]></Director>
+        <Anio><![CDATA[MATIAS]]></Anio>
+        <Duracion><![CDATA[g71]]></Duracion>
         <protagonistas>
             <actor nombre="Ryan Gosling">Sebastian Wilder</actor>
             <actor nombre="[CDATA[RODRIGO]]">Mia Dolan</actor>
@@ -19,12 +18,11 @@
             <nacionalidad>Estados Unidos</nacionalidad>
         </nacionalidades>
     </pelicula>
-
-    <pelicula>
-        <titulo>The Shawshank Redemption</titulo>
-        <director>Frank Darabont</director>
-        <anio>1994</anio>
-        <duracion>142</duracion>
+    <pelicula2 indice="3">
+        <Titulo><![CDATA[100451802]]></Titulo>
+        <Director><![CDATA[CHEN]]></Director>
+        <Anio><![CDATA[YONGBIN]]></Anio>
+        <Duracion><![CDATA[g71]]></Duracion>
         <protagonistas>
             <actor nombre="Tim Robbins"/>
             <actor nombre="Morgan Freeman"/>
@@ -35,15 +33,14 @@
         <nacionalidades>
             <nacionalidad>USA</nacionalidad>
         </nacionalidades>
-    </pelicula>
-
-    <pelicula indice="3">
-        <titulo>Spirited Away</titulo>
-        <director>Hayao Miyazaki</director>
-        <anio>2001</anio>
-        <duracion>125 minutes</duracion>
+    </pelicula2>
+    <pelicula>
+        <Titulo><![CDATA[100451775]]></Titulo>
+        <Director><![CDATA[DE LAMA FERNANDEZ]]></Director>
+        <Anio><![CDATA[RODRIGO]]></Anio>
+        <Duracion><![CDATA[g71]]></Duracion>
         <protagonistas>
-            <actor nombre="Rumi Hiiragi"/>
+            <actor><![CDATA[DE LAMA FERNANDEZ]]></actor>
             <actor nombre="Miyu Irino"/>
         </protagonistas>
         <generos>
@@ -55,5 +52,4 @@
             <nacionalidad>Japan</nacionalidad>
         </nacionalidades>
     </pelicula>
-
 </peliculas>
