@@ -1,0 +1,17 @@
+Sesión 2: práctica
+El objetivo de esta sesión es trabajar en el ordenador con documentos XML y DTDs. La práctica no es entregable, pero el resto de prácticas se basarán en ella, por lo que es necesario llevarla a cabo con anterioridad a realizar las próximas prácticas.
+
+Cada pareja debe definir un tipo de documento XML que permita representar un conjunto de películas que cumpla los requisitos que se enumeran a continuación:
+
+Como mínimo debe permitir representar los siguientes datos de una película, aunque se permite representar cualquier otro tipo de datos adicional que el alumno considere conveniente:
+Título.
+Director.
+Año.
+Duración.
+Actores protagonistas (añadiendo, opcionalmente, el nombre del personaje o personajes cuyo papel desempeñen).
+Uno o más géneros a los que pertenezca.
+Nacionalidad o nacionalidades.
+Debe contar con un DTD que especifique los elementos permitidos, su tipo de contenido, atributos, etc. Dado el fin didáctico de la práctica, el DTD debe incorporar tipos de contenidos de elementos y de atributos variados.
+Además de escribir el DTD, deben escribirse varios documentos XML con datos de películas. Deberá comprobarse que estos documentos estén bien formados y sean válidos.
+
+Para comprobar si un documento dado está bien formado y es válido con respecto a su DTD se pueden utilizar los propios parsers de XML incorporados en la API de Java. El siguiente programa Java permite hacer esto: Validate.java.

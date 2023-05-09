@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE peliculas SYSTEM "peli.dtd">
+<peliculas>
+    <pelicula indice="1">
+        <titulo>The Dark Knight</titulo>
+        <director>Christopher Nolan</director>
+        <anio>2008</anio>
+        <duracion>152</duracion>
+        <protagonistas>
+        <actor nombre="Christian Bale" />
+        <actor nombre="Heath Ledger" />
+        </protagonistas>
+        <generos>
+        <genero>Action</genero>
+        <genero>Drama</genero>
+        <genero>Crime</genero>
+        </generos>
+        <nacionalidades>
+        <nacionalidad>USA</nacionalidad>
+        <nacionalidad>UK</nacionalidad>
+        </nacionalidades>
+    </pelicula>
+    <pelicula indice="2">
+        <titulo>Inception</titulo>
+        <director>Christopher Nolan</director>
+        <anio>2010</anio>
+        <duracion>148</duracion>
+        <protagonistas>
+        <actor nombre="Leonardo DiCaprio" />
+        <actor nombre="Joseph Gordon-Levitt" />
+        </protagonistas>
+        <generos>
+        <genero>Action</genero>
+        <genero>Adventure</genero>
+        <genero>Sci-Fi</genero>
+        </generos>
+        <nacionalidades>
+        <nacionalidad>USA</nacionalidad>
+        <nacionalidad>UK</nacionalidad>
+        </nacionalidades>
+    </pelicula>
+</peliculas>

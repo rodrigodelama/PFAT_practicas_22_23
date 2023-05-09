@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE peliculas SYSTEM "peli.dtd">
+<peliculas>
+    <pelicula indice="1">
+        <titulo>The Shawshank Redemption</titulo>
+        <director>Frank Darabont</director>
+        <anio>1994</anio>
+        <duracion>142</duracion>
+        <protagonistas>
+        <actor nombre="Tim Robbins" />
+        <actor nombre="Morgan Freeman" />
+        </protagonistas>
+        <generos>
+        <genero>Drama</genero>
+        <genero>Crime</genero>
+        </generos>
+        <nacionalidades>
+        <nacionalidad>USA</nacionalidad>
+        </nacionalidades>
+    </pelicula>
+    <pelicula indice="2">
+        <titulo>Pulp Fiction</titulo>
+        <director>Quentin Tarantino</director>
+        <anio>1994</anio>
+        <duracion>154</duracion>
+        <protagonistas>
+        <actor nombre="John Travolta" />
+        <actor nombre="Samuel L. Jackson" />
+        <actor nombre="Uma Thurman" />
+        </protagonistas>
+        <generos>
+        <genero>Crime</genero>
+        <genero>Drama</genero>
+        <genero>Thriller</genero>
+        </generos>
+        <nacionalidades>
+        <nacionalidad>USA</nacionalidad>
+        </nacionalidades>
+    </pelicula>
+</peliculas>
