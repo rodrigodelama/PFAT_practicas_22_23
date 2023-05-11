@@ -8,7 +8,7 @@
         <duracion>128</duracion>
         <protagonistas>
             <actor nombre="Ryan Gosling">Sebastian Wilder</actor>
-            <actor nombre="[CDATA[RODRIGO]]">Mia Dolan</actor>
+            <actor nombre="abc">Mia Dolan</actor>
         </protagonistas>
         <generos>
             <genero>Musical</genero>
