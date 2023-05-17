@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "cars.dtd">
+
+<concesionario>
+    <coche referencia="R0" anho="2008">
+        <marca>Citroen</marca>
+        <modelo>C4</modelo>
+        <transmision tipo="manual"/>
+    </coche>
+    <coche referencia="R1" anho="2018">
+        <marca>Mercedes Benz</marca>
+        <modelo>A220</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+    <coche referencia="R2" anho="2015">
+        <marca>Toyota</marca>
+        <modelo>Prius</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+    <coche referencia="R3" anho="2017">
+        <marca>Toyota</marca>
+        <modelo>Corolla</modelo>
+        <transmision tipo="manual"/>
+    </coche>
+    <coche referencia="R4" anho="2018">
+        <marca>Toyota</marca>
+        <modelo>Yaris</modelo>
+        <transmision tipo="manual"/>
+    </coche>
+    <coche referencia="R5" anho="2020">
+        <marca>Toyota</marca>
+        <modelo>Camry</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+    <coche referencia="R6" anho="2019">
+        <marca>Toyota</marca>
+        <modelo>RAV4</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+    <coche referencia="R7" anho="2019">
+        <marca>Toyota</marca>
+        <modelo>Highlander</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+</concesionario>

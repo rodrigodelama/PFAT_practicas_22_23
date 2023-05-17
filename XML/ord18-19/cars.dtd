@@ -1,0 +1,14 @@
+<!ELEMENT concesionario (coche)*>
+
+<!ELEMENT coche (marca, modelo, transmision)>
+<!ATTLIST coche
+          referencia ID #REQUIRED
+          anho CDATA #REQUIRED>
+
+<!ELEMENT marca (#PCDATA)>
+
+<!ELEMENT modelo (#PCDATA)>
+
+<!ELEMENT transmision EMPTY>
+<!ATTLIST transmision
+          tipo (manual|automatica) #REQUIRED>

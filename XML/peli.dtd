@@ -1,4 +1,5 @@
 <!ELEMENT peliculas (pelicula+)>
+
 <!ELEMENT pelicula (titulo, director, anio, duracion, protagonistas, generos, nacionalidades)>
 <!ATTLIST pelicula indice CDATA #IMPLIED>
 

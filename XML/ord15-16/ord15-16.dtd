@@ -1,0 +1,7 @@
+<!ELEMENT matrixE (filaE+)>
+<!ATTLIST matrixE totalCe1das CDATA #IMPLIED>
+
+<!ELEMENT filaE (celdaE+)>
+<!ATTLIST filaE celdas CDATA #IMPLIED>
+
+<!ELEMENT celdaE (#PCDATA)>
