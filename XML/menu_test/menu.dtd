@@ -1,0 +1,14 @@
+<!ELEMENT menu (platos+)>
+
+<!ELEMENT platos (nombre, plato, ingrdientes)>
+<!ATTLIST alimento
+            menu ID #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT plato (#PCDATA)>
+<!ATTLIST plato
+          tipo (Primero|Segundo|Postre) #REQUIRED>
+
+<!ELEMENT ingredientes (ingrediente+)>
+<!ELEMENT ingrediente (#PCDATA)>

@@ -6,7 +6,7 @@ import org.xml.sax.SAXException;
 class retrieve {
     public static void main(String[] args) {
         Document doc;
-        String s;
+        int s;
 
         if (args.length != 1) {
             System.err.println("Usage: java retrieve <file>");
@@ -16,7 +16,7 @@ class retrieve {
         try {
             doc = parse(args[0]);
             s = ordinaria(doc);
-            System.out.println("Ordinaria: " + s);
+            System.out.println("Numero de Primeros Platos: " + s);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }
@@ -28,33 +28,39 @@ class retrieve {
         return builder.parse(filePath);
     }
 
-    private static String ordinaria(Document doc) {
-        Element docEl;
+    private static int ordinaria(Document doc) {
+        Element docEl, el;
+        int contador, i1, s1, i2, s2;
         NodeList nl1, nl2;
-        int i1, s1, i2, s2;
         Node n1, n2;
 
+        contador = 0;
+        
         docEl = doc.getDocumentElement();
         nl1 = docEl.getChildNodes();
         s1 = nl1.getLength();
-
-        for (i1 = 0; i1 < s1; i1++) {
+        
+        for(i1 = 0; i1 < s1; i1++) {
             n1 = nl1.item(i1);
-
-            if (n1.getNodeType() == Node.ELEMENT_NODE) {
+            
+            if(n1.getNodeType() == Node.ELEMENT_NODE) {
                 nl2 = n1.getChildNodes();
                 s2 = nl2.getLength();
-
-                for (i2 = 0; i2 < s2; i2++) {
-                    //n2 = nl2.item(i2); //return the 1st element's text content
-                    n2 = nl2.item(i2+1); //return the 2nd element's text content
-
-                    if (n2.getNodeType() == Node.ELEMENT_NODE) {
-                        return n2.getFirstChild().getNodeValue();
+                
+                for(i2 = 0; i2 < s2; i2++) {
+                    n2 = nl2.item(i2);
+                    
+                    if(n2.getNodeType() == Node.ELEMENT_NODE) {
+                        if(n2.getNodeName().equals("plato")) {
+                            el = (Element) n2;
+                            if(el.getAttribute("tipo").equals("Primero")) {
+                                contador++;
+                            }
+                        }
                     }
                 }
             }
         }
-        return "";  //so JAVA does not complain
+        return contador;
     }
 }

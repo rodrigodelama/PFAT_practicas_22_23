@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "pantry.dtd">
+
+<despensa>
+    <alimento id="1">
+        <nombre>Arroz</nombre>
+        <classificacion>Comida/Cena</classificacion>
+        <plato>Segundo</plato>
+    </alimento>
+
+</despensa>

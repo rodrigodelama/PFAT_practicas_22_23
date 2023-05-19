@@ -1,0 +1,14 @@
+<!ELEMENT despensa (alimento+)>
+
+<!ELEMENT alimento (nombre, classificacion, plato, ingrdientes)>
+<!ATTLIST alimento
+            id ID #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT classificacion (#PCDATA)>
+
+<!ELEMENT plato (#PCDATA)>
+
+<!ELEMENT ingrdientes (ingrediente+)>
+<!ELEMENT ingrediente (#PCDATA)>

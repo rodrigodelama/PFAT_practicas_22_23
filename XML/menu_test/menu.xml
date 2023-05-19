@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "menu.dtd">
+
+<menu>
+    <platos id="1">
+        <nombre>Arroz con Pollo</nombre>
+        <plato tipo="Segundo"/>
+        <ingrdientes>
+            <ingrediente>Arroz</ingrediente>
+            <ingrediente>Agua</ingrediente>
+            <ingrediente>Pollo</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="2">
+        <nombre>Spaguetis Carbonara</nombre>
+        <plato tipo="Primero"/>
+        <ingrdientes>
+            <ingrediente>Spaguetis</ingrediente>
+            <ingrediente>Panceta</ingrediente>
+            <ingrediente>Parmeggiano Reggiano</ingrediente>
+            <ingrediente>Huevo</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="3">
+        <nombre>Ensalada de Frutas</nombre>
+        <plato tipo="Postre"/>
+        <ingrdientes>
+            <ingrediente>Manzana</ingrediente>
+            <ingrediente>Platano</ingrediente>
+            <ingrediente>Uvas</ingrediente>
+            <ingrediente>Fresas</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="4">
+        <nombre>Ensalada de Lechuga</nombre>
+        <plato tipo="Primero"/>
+        <ingrdientes>
+            <ingrediente>Lechuga</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Atun</ingrediente>
+            <ingrediente>Maiz</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="5">
+        <nombre>Ensalada de Pasta</nombre>
+        <plato tipo="Segundo"/>
+        <ingrdientes>
+            <ingrediente>Pasta</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Atun</ingrediente>
+            <ingrediente>Maiz</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="6">
+        <nombre>Chuleton de Ternera</nombre>
+        <plato tipo="Segundo"/>
+        <ingrdientes>
+            <ingrediente>Chuleton</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Pimienta</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="7">
+        <nombre>Pollo al Curry</nombre>
+        <plato tipo="Segundo"/>
+        <ingrdientes>
+            <ingrediente>Pollo</ingrediente>
+            <ingrediente>Curry</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Pimienta</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="8">
+        <nombre>Salmorejo</nombre>
+        <plato tipo="Primero"/>
+        <ingrdientes>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Pan</ingrediente>
+            <ingrediente>Aceite</ingrediente>
+            <ingrediente>Sal</ingrediente>
+        </ingrdientes>
+    </platos>
+
+    <platos id="9">
+        <nombre>Ensalada de Pasta</nombre>
+        <plato tipo="Primero"/>
+        <ingrdientes>
+            <ingrediente>Pasta</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Atun</ingrediente>
+            <ingrediente>Maiz</ingrediente>
+        </ingrdientes>
+    </platos>
+
+</menu>

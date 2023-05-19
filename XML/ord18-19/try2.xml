@@ -42,4 +42,14 @@
         <modelo>Highlander</modelo>
         <transmision tipo="automatica"/>
     </coche>
+    <coche referencia="R8" anho="2019">
+        <marca>Toyota</marca>
+        <modelo>4Runner</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
+    <coche referencia="R9" anho="2019">
+        <marca>Toyota</marca>
+        <modelo>Sequoia</modelo>
+        <transmision tipo="automatica"/>
+    </coche>
 </concesionario>
