@@ -1,0 +1,32 @@
+<!ELEMENT tickets(ticket+)>
+<!ELEMENT ticket (id, fecha, hora, origen, destino, precio, asiento)>
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT fecha (#PCDATA)>
+<!ATTLIST fecha
+          dia CDATA #REQUIRED
+          mes CDATA #REQUIRED
+          ano CDATA #REQUIRED>
+
+<!ELEMENT hora (#PCDATA)>
+<!ATTLIST hora
+          hora CDATA #REQUIRED
+          minuto CDATA #REQUIRED>
+
+<!ELEMENT origen (#PCDATA)>
+
+<!ELEMENT destino (#PCDATA)>
+<!ATTLIST destino
+          pais CDATA #REQUIRED
+          ciudad CDATA #REQUIRED>
+
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio
+          moneda CDATA #REQUIRED
+          cantidad CDATA #REQUIRED>
+
+<!ELEMENT asiento (#PCDATA)>
+<!ATTLIST asiento
+          clase CDATA #REQUIRED
+          numero CDATA #REQUIRED>
