@@ -30,16 +30,16 @@ class retrieve {
 
     private static String ordinaria(Document doc) {
         Element docEl;
-        NodeList nl1, nl2;
+        NodeList nl1, nl2;//nl1 = hijos del nodo raíz, nl2 = hijos de los hijos del nodo raíz
         int i1, s1, i2, s2;
         Node n1, n2;
 
         docEl = doc.getDocumentElement();
-        nl1 = docEl.getChildNodes();
+        nl1 = docEl.getChildNodes();//hijos del nodo raíz
         s1 = nl1.getLength();
 
         for (i1 = 0; i1 < s1; i1++) {
-            n1 = nl1.item(i1);
+            n1 = nl1.item(i1);//iteramos sobre cada hijo de la lista de hijos del nodo raíz
 
             if (n1.getNodeType() == Node.ELEMENT_NODE) {
                 nl2 = n1.getChildNodes();
