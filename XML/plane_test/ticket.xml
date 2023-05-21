@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ticketchecker SYSTEM "ticket.dtd">
+
+<ticket>
+    <id>1</id>
+        <fecha dia="12" mes="12" ano="2012"></fecha>
+        <hora hora="12" minuto="12"></hora>
+        <origen pais="España" ciudad="Madrid"></origen>
+        <destino pais="España" ciudad="Barcelona"></destino>
+        <precio moneda="Euros" cantidad="100"></precio>
+        <asiento clase="Turista" numero="12"></asiento>
+
+    <id>2</id>
+        <fecha dia="10" mes="10" ano="2010"></fecha>
+        <hora hora="10" minuto="10"></hora>
+        <origen pais="Francia" ciudad="Lyon"></origen>
+        <destino pais="Francia" ciudad="Paris"></destino>
+        <precio moneda="Euros" cantidad="200"></precio>
+        <asiento clase="Turista" numero="10"></asiento>
+
+
+</ticket>

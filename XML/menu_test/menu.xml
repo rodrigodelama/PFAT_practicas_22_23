@@ -2,17 +2,19 @@
 <!DOCTYPE concesionario SYSTEM "menu.dtd">
 
 <menu>
-    <platos id="1">
+    <platos numero="1">
         <nombre>Arroz con Pollo</nombre>
         <plato tipo="Segundo"/>
         <ingrdientes>
             <ingrediente>Arroz</ingrediente>
             <ingrediente>Agua</ingrediente>
             <ingrediente>Pollo</ingrediente>
+            <ingrediente>Sal</ingrediente>
+            <ingrediente>Verduras</ingrediente>
         </ingrdientes>
     </platos>
 
-    <platos id="2">
+    <platos numero="2">
         <nombre>Spaguetis Carbonara</nombre>
         <plato tipo="Primero"/>
         <ingrdientes>
@@ -23,7 +25,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="3">
+    <platos numero="3">
         <nombre>Ensalada de Frutas</nombre>
         <plato tipo="Postre"/>
         <ingrdientes>
@@ -34,7 +36,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="4">
+    <platos numero="4">
         <nombre>Ensalada de Lechuga</nombre>
         <plato tipo="Primero"/>
         <ingrdientes>
@@ -45,7 +47,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="5">
+    <platos numero="5">
         <nombre>Ensalada de Pasta</nombre>
         <plato tipo="Segundo"/>
         <ingrdientes>
@@ -56,7 +58,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="6">
+    <platos numero="6">
         <nombre>Chuleton de Ternera</nombre>
         <plato tipo="Segundo"/>
         <ingrdientes>
@@ -66,7 +68,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="7">
+    <platos numero="7">
         <nombre>Pollo al Curry</nombre>
         <plato tipo="Segundo"/>
         <ingrdientes>
@@ -77,7 +79,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="8">
+    <platos numero="8">
         <nombre>Salmorejo</nombre>
         <plato tipo="Primero"/>
         <ingrdientes>
@@ -88,7 +90,7 @@
         </ingrdientes>
     </platos>
 
-    <platos id="9">
+    <platos numero="9">
         <nombre>Ensalada de Pasta</nombre>
         <plato tipo="Primero"/>
         <ingrdientes>
