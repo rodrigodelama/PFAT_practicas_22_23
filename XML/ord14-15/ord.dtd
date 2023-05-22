@@ -1,0 +1,8 @@
+<!ELEMENT personal (empleado+)>
+<!ELEMENT empleado (nombre,telefono,correo)>
+<!ATTLIST empleado id ID #REQUIRED
+                   url CDATA #IMPLIED
+                   cargo (socio|gerente|consultor) "consultor">
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT correo (#PCDATA)>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personal SYSTEM "ord.dtd">
+
+<personal>
+  <empleado id="c1">
+    <nombre>Juan Pérez</nombre>
+    <telefono>600123456</telefono>
+    <correo>juan@pfat.es</correo>
+  </empleado>
+  <empleado id="c2">
+    <nombre>Luis Muñoz</nombre>
+    <telefono>609456123</telefono>
+    <correo>luis@pfat.es</correo>
+  </empleado>
+</personal>

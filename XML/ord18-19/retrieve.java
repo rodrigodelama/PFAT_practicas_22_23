@@ -52,8 +52,8 @@ class retrieve {
                     
                     if(n2.getNodeType() == Node.ELEMENT_NODE) {
                         if(n2.getNodeName().equals("transmision")) {
-                            el = (Element) n2;//hace falta castearlo para poder usar getAttribute.
-                            //si lo dejasemos sin castear, sería de tipo Node.
+                            el = (Element) n2; //hace falta castearlo para poder usar getAttribute.
+                            //si lo dejasemos sin castear, sería de tipo Node y no aceptaria getAttribute.
                             if(el.getAttribute("tipo").equals("automatica")) {
                                 contador++;
                             }
