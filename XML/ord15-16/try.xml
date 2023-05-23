@@ -2,7 +2,7 @@
 <!DOCTYPE matrixE SYSTEM "ord15-16.dtd">
 
 <matrixE>
-<filaE><test>9</test><test>0</test><test>2</test></filaE>
-<filaE><test>3</test><test>1</test><test>5</test></filaE>
-<filaE><test>0</test><test>1</test><test>2</test></filaE>
+<filaE><celdaE>1</celdaE><celdaE>0</celdaE><celdaE>2</celdaE></filaE>
+<filaE><celdaE>3</celdaE><celdaE>1</celdaE><celdaE>5</celdaE></filaE>
+<filaE><celdaE>0</celdaE><celdaE>1</celdaE><celdaE>2</celdaE></filaE>
 </matrixE>

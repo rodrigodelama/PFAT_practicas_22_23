@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE DatosInmuebles SYSTEM "ord.dtd">
+
+<DatosInmuebles>
+    <Inmueble codigo="c134"
+              tipo="piso"
+              precio="370000">
+        <Tamanyo>
+            <Utiles metros="103"/>
+            <Construidos metros="158"/>
+        </Tamanyo>
+        <Ubicacion provincia="Madrid">
+            <Calle>Salvador Allende</Calle>
+            <Municipio>Madrid</Municipio>
+        </Ubicacion>
+    </Inmueble>
+    <Inmueble codigo="c183"
+              tipo="chalet"
+              precio="410000"
+              habitaciones="5">
+        <Tamanyo>
+            <Construidos metros="337"/>
+        </Tamanyo>
+        <Ubicacion provincia="Madrid">
+            <Calle>Federica Montseny</Calle>
+            <Municipio>Leganés</Municipio>
+        </Ubicacion>
+    </Inmueble>
+    <Inmueble codigo="c192"
+              tipo="piso"
+              precio="180000">
+        <Tamanyo>
+            <Construidos metros="97"/>
+        </Tamanyo>
+        <Ubicacion provincia="Madrid">
+            <Calle>Jesus Miguel Haddad Blanco</Calle>
+            <Municipio>Leganés</Municipio>
+        </Ubicacion>
+    </Inmueble>
+    <Inmueble codigo="c207"
+              tipo="piso"
+              precio="165000">
+        <Tamanyo>
+            <Construidos metros="82"/>
+        </Tamanyo>
+        <Ubicacion provincia="Cantabria">
+            <Calle>Isabel la Catolica</Calle>
+            <Municipio>Santander</Municipio>
+        </Ubicacion>
+    </Inmueble>
+</DatosInmuebles>

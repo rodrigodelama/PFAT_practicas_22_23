@@ -1,0 +1,13 @@
+<TestSpec ext="---">
+	<GrupoTest tipo="lex" num="----"/>
+	<Test tipo="--" privado="no" id="--" genClass="--">
+		<Comentario>
+			Hola
+			<Invento/>
+        </Comentario>
+		<Ejecucion>
+            <Argumento/>
+            <Resultado/>
+        </Ejecucion>	
+    </Test>
+</TestSpec>

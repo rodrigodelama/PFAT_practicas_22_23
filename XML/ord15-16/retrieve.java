@@ -46,8 +46,8 @@ class retrieve {
                 s2 = nl2.getLength();
 
                 for (i2 = 0; i2 < s2; i2++) {
-                    //n2 = nl2.item(i2); //return the 1st element's text content
-                    n2 = nl2.item(i2+1); //return the 2nd element's text content
+                    n2 = nl2.item(i2); //return the 1st element's text content
+                    //n2 = nl2.item(i2+1); //return the 2nd element's text content
 
                     if (n2.getNodeType() == Node.ELEMENT_NODE) {
                         return n2.getFirstChild().getNodeValue();

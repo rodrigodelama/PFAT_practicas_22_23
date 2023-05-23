@@ -25,12 +25,12 @@
 
 
 <!--
-    NOTES:
+    NOTES de como crear un attlist correctamente:
     <!ATTLIST nombre_elemento atributo tipo_valor_atributo valor_por_defecto>
     <!ATTLIST nombreElemento nombreAtributo1 tipoAtributo1 valorInicialAtributo1>
     <!ATTLIST nombreElemento nombreAtributo2 tipoAtributo2 valorInicialAtributo2>
 
-    CLASS CODE:
+    CLASS EXAMPLE DTD CODE:
     <!ELEMENT TestSpec ((Test | GrupoTest)+)>
     <!ATTLIST TestSpec ext CDATA #REQUIRED>
 

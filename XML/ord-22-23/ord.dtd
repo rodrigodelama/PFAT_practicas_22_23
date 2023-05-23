@@ -1,0 +1,26 @@
+<!ELEMENT DatosInmuebles (Inmueble+)>
+
+<!ELEMENT Inmueble (Tamanyo, Ubicacion)>
+<!ATTLIST Inmueble
+          codigo ID #REQUIRED
+          tipo (piso|chalet|local|garage) #REQUIRED
+          precio CDATA #REQUIRED
+          habitaciones CDATA #IMPLIED>
+
+<!ELEMENT Tamanyo (Utiles?, Construidos)>
+
+<!ELEMENT Ubicacion (Calle, Municipio)>
+<!ATTLIST Ubicacion
+          provincia CDATA #REQUIRED>
+
+<!ELEMENT Utiles EMPTY>
+<!ATTLIST Utiles
+          metros CDATA #REQUIRED>
+
+<!ELEMENT Construidos EMPTY>
+<!ATTLIST Construidos
+          metros CDATA #REQUIRED>
+
+<!ELEMENT Calle (#PCDATA)>
+
+<!ELEMENT Municipio (#PCDATA)>
