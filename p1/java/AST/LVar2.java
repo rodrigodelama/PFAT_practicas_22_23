@@ -13,6 +13,7 @@ public class LVar2 implements LVar {
     private int ind;
     private int args_length;
 
+    //constructor
     public LVar2(String identifier, LVar l) {
         this.identifier = identifier;
         this.lv = l;
