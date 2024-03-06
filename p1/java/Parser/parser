@@ -17,14 +17,14 @@ public void unrecovered_syntax_error(Symbol s) throws
 :};
 
 terminal IF, THEN, ELSE, END, WHILE, PLOT, DO, NOT, AND, OR, SIZE, PROG,
-INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
-MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
-
+        INT2REAL, REAL2INT, VARS, SENO, COSENO, EXPONENCIAL, PC, ASOP, MENORQUE,
+        MAYORQUE, MAS, DIV, POR, PAREN, TESIS, IGUALQUE, COMA, MENOS, UMENOS;
 
 terminal Integer TIPO, CENT, COLOR;
 terminal Float CREAL, PI; // TIPO:es para diferenciar entre distintas variables, CENT->int, CREAL->real,COLOR->color
 terminal Boolean CLOG;
 terminal String IDENT;
+
 non terminal Prog Prog;
 non terminal VDef VDef;
 non terminal Vars Vars;
@@ -73,9 +73,7 @@ Cond ::= IF Exp:e THEN Sent:s1 END {:RESULT=new Condicional1(e, s1); :} | IF Exp
 
 Repet ::= WHILE Exp:e DO Sent:s END {:RESULT=new Iteracion(e, s); :} ;
 
-
 Plot ::= PLOT PAREN COLOR:c1 COMA Exp:e1 COMA Exp:e2 TESIS {:RESULT=new Plot(e1, e2, c1); :} ;
-
 
       //Expresiones sin tipo definido
 Exp ::= IDENT:s {:RESULT=new Variable(s); :}

@@ -1,5 +1,10 @@
 {
     "workbench.preferredLightColorTheme": "Default Dark Modern",
     "workbench.colorTheme": "Default Dark Modern",
-    "workbench.preferredHighContrastLightColorTheme": "Default High Contrast"
+    "workbench.preferredHighContrastLightColorTheme": "Default High Contrast",
+    
+    "files.associations": {
+        "parser": "java",
+        "Yylex": "java"
+    }
 }

@@ -14,7 +14,7 @@ javac -d . *.java
 rm parser.java
 rm sym.java
 cd ../java/Lexer/
-java JLex.Main Yylex
+java -cp ../../../class/ JLex.Main Yylex
 mv Yylex.java ../../class/Yylex.java
 cd ../../class/
 javac -d . Yylex.java
